@@ -1,16 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import brandIllustration from '../assets/you.png';
 import wholesalerIcon from '../assets/Icon(2).svg';
 import retailerIcon from '../assets/Icon(1).svg';
 
-export default function SelectAccountType() {
-  const [selectedType, setSelectedType] = useState(null);
-
-  const handleSelect = (type) => {
-    setSelectedType(type);
-    console.log('Selected type:', type);
-  };
-
+export default function SelectType({ onSelectType }) {
   return (
     <div className="min-h-screen w-full flex flex-col md:flex-row bg-[#FAFAFA]">
       <div className="md:w-1/2 w-full h-screen bg-[#F5F6F8]">
@@ -36,36 +29,20 @@ export default function SelectAccountType() {
           <div className="grid grid-cols-2 gap-4">
             <button
               type="button"
-              onClick={() => handleSelect('wholesaler')}
-              className={`flex flex-col items-center justify-center p-6 rounded-xl border transition-all duration-200 ${
-                selectedType === 'wholesaler' 
-                  ? 'border-slate-800 bg-slate-50 text-slate-900 shadow-sm' 
-                  : 'border-slate-200 hover:border-slate-300 text-slate-600 bg-white'
-              }`}
+              onClick={() => onSelectType('wholesaler')}
+              className="flex flex-col items-center justify-center p-6 rounded-xl border border-slate-200 hover:border-slate-800 text-slate-600 bg-white transition-all duration-200"
             >
-              <img 
-                src={wholesalerIcon} 
-                alt="Wholesaler" 
-                className="w-6 h-6 mb-2 object-contain"
-              />
-              <span className="text-sm font-medium text-black-800">Wholesaler</span>
+              <img src={wholesalerIcon} alt="Wholesaler" className="w-6 h-6 mb-2 object-contain" />
+              <span className="text-sm font-medium text-slate-800">Wholesaler</span>
             </button>
 
             <button
               type="button"
-              onClick={() => handleSelect('retailer')}
-              className={`flex flex-col items-center justify-center p-6 rounded-xl border transition-all duration-200 ${
-                selectedType === 'retailer' 
-                  ? 'border-slate-800 bg-slate-50 text-slate-900 shadow-sm' 
-                  : 'border-slate-200 hover:border-slate-300 text-slate-600 bg-white'
-              }`}
+              onClick={() => onSelectType('retailer')}
+              className="flex flex-col items-center justify-center p-6 rounded-xl border border-slate-200 hover:border-slate-800 text-slate-600 bg-white transition-all duration-200"
             >
-              <img 
-                src={retailerIcon} 
-                alt="Retailer" 
-                className="w-6 h-6 mb-2 object-contain"
-              />
-              <span className="text-sm font-medium text-black-800">Retailer</span>
+              <img src={retailerIcon} alt="Retailer" className="w-6 h-6 mb-2 object-contain" />
+              <span className="text-sm font-medium text-slate-800">Retailer</span>
             </button>
           </div>
 
