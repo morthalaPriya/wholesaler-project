@@ -30,7 +30,7 @@ export default function SelectType({ onSelectType }) {
             <button
               type="button"
               onClick={() => onSelectType('wholesaler')}
-              className="flex flex-col items-center justify-center p-6 rounded-xl border border-slate-200 hover:border-slate-800 text-slate-600 bg-white transition-all duration-200"
+              className="flex flex-col items-center justify-center p-6 rounded-xl border border-slate-200 hover:border-slate-800 text-slate-600 bg-white transition-all cursor-pointer duration-200"
             >
               <img src={wholesalerIcon} alt="Wholesaler" className="w-6 h-6 mb-2 object-contain" />
               <span className="text-sm font-medium text-slate-800">Wholesaler</span>
@@ -39,7 +39,7 @@ export default function SelectType({ onSelectType }) {
             <button
               type="button"
               onClick={() => onSelectType('retailer')}
-              className="flex flex-col items-center justify-center p-6 rounded-xl border border-slate-200 hover:border-slate-800 text-slate-600 bg-white transition-all duration-200"
+              className="flex flex-col items-center justify-center p-6 rounded-xl border border-slate-200 hover:border-slate-800 text-slate-600 bg-white transition-all cursor-pointer duration-200"
             >
               <img src={retailerIcon} alt="Retailer" className="w-6 h-6 mb-2 object-contain" />
               <span className="text-sm font-medium text-slate-800">Retailer</span>

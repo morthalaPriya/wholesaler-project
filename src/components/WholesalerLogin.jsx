@@ -3,20 +3,22 @@ import retailerIcon from '../assets/Icon(1).svg';
 import wholesalerIcon from '../assets/Icon(2).svg';
 import googleIcon from '../assets/Icon(3).svg';
 import appleIcon from '../assets/Icon(4).svg';
-import emailIcon from '../assets/Icon(5).svg';
-import lockIcon from '../assets/Icon(6).svg';
+import emailIcon from '../assets/Icon(6).svg';
+import lockIcon from '../assets/Icon(5).svg';
 import logoIcon from '../assets/Icon(7).svg';
 
-export default function WholesalerLogin({ onSelectType }) {
+export default function WholesalerLogin({ onSelectType, onForgotPassword }) {
   const [loginMethod, setLoginMethod] = useState('password');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
   const handleAccountTypeSelect = (type) => {
     setLoginMethod('password');
     if (onSelectType) {
       onSelectType(type);
     }
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (loginMethod === 'otp') {
@@ -28,9 +30,10 @@ export default function WholesalerLogin({ onSelectType }) {
 
   return (
     <div className="min-h-screen w-full flex flex-col md:flex-row font-sans">
-        <div 
-         className="relative md:w-1/2 w-full p-10 md:p-14 text-white flex flex-col justify-center min-h-screen overflow-hidden transition-colors duration-500"
-         style={{ 
+
+      <div 
+        className="relative md:w-1/2 w-full p-10 md:p-14 text-white flex flex-col justify-center min-h-screen overflow-hidden transition-colors duration-500"
+        style={{ 
           backgroundColor: loginMethod === 'otp' ? '#155DFC' : '#4E0860' 
         }}
       >
@@ -74,9 +77,9 @@ export default function WholesalerLogin({ onSelectType }) {
               <p className="text-white/80 text-[11px] md:text-xs mt-1 font-normal leading-tight">Satisfaction</p>
             </div>
           </div>
-
         </div>
       </div>
+
       <div className="md:w-1/2 w-full bg-[#f4f5f8] flex items-center justify-center p-6 md:p-12">
         <div className="w-full max-w-xl bg-white p-8 rounded-3xl shadow-2xl border border-slate-100">
           
@@ -91,7 +94,7 @@ export default function WholesalerLogin({ onSelectType }) {
             <button
               type="button"
               onClick={() => handleAccountTypeSelect('wholesaler')}
-              className="h-[96px] w-full rounded-[8px] bg-[#030213] text-white flex flex-col items-center justify-center gap-2 shadow-sm transition-all"
+              className="h-[96px] w-full rounded-[8px] bg-[#030213] text-white flex flex-col items-center justify-center gap-2 shadow-sm transition-all cursor-pointer"
             >
               <img src={wholesalerIcon} alt="Wholesaler" className="w-5 h-5 object-contain invert" />
               <span className="text-xs font-semibold tracking-wide">Wholesaler</span>
@@ -100,17 +103,18 @@ export default function WholesalerLogin({ onSelectType }) {
             <button
               type="button"
               onClick={() => handleAccountTypeSelect('retailer')}
-              className="h-[96px] w-full rounded-[8px] border border-slate-200 bg-white text-slate-800 flex flex-col items-center justify-center gap-2 hover:bg-[#ECECF0] transition-all"
+              className="h-[96px] w-full rounded-[8px] border border-slate-200 bg-white text-slate-800 flex flex-col items-center justify-center gap-2 hover:bg-[#ECECF0] transition-all cursor-pointer"
             >
               <img src={retailerIcon} alt="Retailer" className="w-5 h-5 object-contain" />
               <span className="text-xs font-semibold tracking-wide">Retailer</span>
             </button>
           </div>
+
           <div className="bg-[#ECECF0] p-1 rounded-3xl flex mb-6">
             <button
               type="button"
               onClick={() => setLoginMethod('password')}
-              className={`flex-1 py-2 text-xs font-semibold rounded-full transition-all ${
+              className={`flex-1 py-2 text-xs font-semibold rounded-full cursor-pointer transition-all ${
                 loginMethod === 'password' 
                   ? 'bg-white text-slate-900 shadow-sm' 
                   : 'text-slate-500 hover:text-slate-700'
@@ -121,7 +125,7 @@ export default function WholesalerLogin({ onSelectType }) {
             <button
               type="button"
               onClick={() => setLoginMethod('otp')}
-              className={`flex-1 py-2 text-xs font-semibold rounded-full transition-all ${
+              className={`flex-1 py-2 text-xs font-semibold rounded-full cursor-pointer transition-all ${
                 loginMethod === 'otp' 
                   ? 'bg-white text-slate-900 shadow-sm' 
                   : 'text-slate-500 hover:text-slate-700'
@@ -130,6 +134,7 @@ export default function WholesalerLogin({ onSelectType }) {
               OTP
             </button>
           </div>
+
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className="block text-xs font-semibold text-slate-700 mb-1.5">
@@ -149,6 +154,7 @@ export default function WholesalerLogin({ onSelectType }) {
                 />
               </div>
             </div>
+
             {loginMethod === 'password' && (
               <>
                 <div>
@@ -169,16 +175,22 @@ export default function WholesalerLogin({ onSelectType }) {
                     />
                   </div>
                 </div>
+
                 <div className="text-right">
-                  <a href="#forgot" className="text-[13px] font-medium text-slate-900 hover:text-slate-900 hover:underline">
+                  <button 
+                    type="button"
+                    onClick={onForgotPassword}
+                    className="text-[13px] font-medium text-slate-900 hover:underline cursor-pointer"
+                  >
                     Forgot Password?
-                  </a>
+                  </button>
                 </div>
               </>
             )}
+
             <button
               type="submit"
-              className="w-full py-3 bg-[#030213] text-white rounded-xl font-semibold text-xs hover:bg-slate-800 transition-all shadow-md mt-2"
+              className="w-full py-3 bg-[#030213] text-white rounded-xl font-semibold text-xs hover:bg-slate-800 transition-all cursor-pointer shadow-md mt-2"
             >
               {loginMethod === 'otp' ? 'Send OTP' : 'Sign In'}
             </button>
@@ -196,7 +208,7 @@ export default function WholesalerLogin({ onSelectType }) {
           <div className="grid grid-cols-2 gap-3 mb-6">
             <button
               type="button"
-              className="flex items-center justify-center gap-2 py-2.5 border border-slate-200 rounded-xl hover:bg-[#ECECF0] transition-all text-xs font-semibold text-slate-900"
+              className="flex items-center justify-center gap-2 py-2.5 border border-slate-200 rounded-xl hover:bg-[#ECECF0] transition-all cursor-pointer text-xs font-semibold text-slate-900"
             >
               <img src={googleIcon} alt="Google" className="w-4 h-4 object-contain" />
               Google
@@ -204,7 +216,7 @@ export default function WholesalerLogin({ onSelectType }) {
 
             <button
               type="button"
-              className="flex items-center justify-center gap-2 py-2.5 border border-slate-200 rounded-xl hover:bg-[#ECECF0] transition-all text-xs font-semibold text-slate-900"
+              className="flex items-center justify-center gap-2 py-2.5 border border-slate-200 rounded-xl hover:bg-[#ECECF0] transition-all cursor-pointer text-xs font-semibold text-slate-900"
             >
               <img src={appleIcon} alt="Apple" className="w-4 h-4 object-contain" />
               Apple
@@ -220,7 +232,6 @@ export default function WholesalerLogin({ onSelectType }) {
 
         </div>
       </div>
-
     </div>
   );
 }
