@@ -122,6 +122,7 @@ export default function WarehousesTab() {
           </div>
         ))}
       </div>
+
       
     </div>
   );
