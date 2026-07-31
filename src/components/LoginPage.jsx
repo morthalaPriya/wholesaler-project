@@ -15,7 +15,7 @@ export default function SelectType({ onSelectType }) {
       </div>
 
       <div className="md:w-1/2 w-full flex items-center justify-center p-8 bg-white">
-        <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-2xl shadow-slate-500/50 border border-slate-100">
+        <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-2xl shadow-slate-600/50 border border-slate-100">
           
           <div className="text-center mb-8">
             <h1 className="text-2xl font-bold text-slate-800 tracking-tight">
@@ -30,7 +30,7 @@ export default function SelectType({ onSelectType }) {
             <button
               type="button"
               onClick={() => onSelectType('wholesaler')}
-              className="flex flex-col items-center justify-center p-6 rounded-xl border border-slate-200 hover:border-slate-800 text-slate-600 bg-white transition-all cursor-pointer duration-200"
+              className="flex flex-col items-center justify-center p-6 rounded-xl border border-slate-200 hover:border-slate-250 hover:bg-[#ECECF0] text-slate-500/50  transition-all cursor-pointer duration-200"
             >
               <img src={wholesalerIcon} alt="Wholesaler" className="w-6 h-6 mb-2 object-contain" />
               <span className="text-sm font-medium text-slate-800">Wholesaler</span>
@@ -39,7 +39,7 @@ export default function SelectType({ onSelectType }) {
             <button
               type="button"
               onClick={() => onSelectType('retailer')}
-              className="flex flex-col items-center justify-center p-6 rounded-xl border border-slate-200 hover:border-slate-800 text-slate-600 bg-white transition-all cursor-pointer duration-200"
+              className="flex flex-col items-center justify-center p-6 rounded-xl border border-slate-200 hover:border-slate-250 hover:bg-[#ECECF0] text-slate-500/50  transition-all cursor-pointer duration-200"
             >
               <img src={retailerIcon} alt="Retailer" className="w-6 h-6 mb-2 object-contain" />
               <span className="text-sm font-medium text-slate-800">Retailer</span>

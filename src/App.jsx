@@ -1,45 +1,36 @@
 import React, { useState } from 'react';
-import SelectType from './components/SelectType';
+import SelectType from './components/LoginPage';
 import WholesalerLogin from './components/WholesalerLogin';
-import ResetPassword from './components/ResetPassword.jsx';
+import ResetPassword from './components/ResetPassword';
+import VerifyIdentity from './components/Verify';
 
 function App() {
   const [selectedType, setSelectedType] = useState(null);
   const [currentScreen, setCurrentScreen] = useState('selectType'); 
 
-  const handleSelectType = (type) => {
-    setSelectedType(type);
-    if (type === 'wholesaler') {
-      setCurrentScreen('login');
-    }
-  };
-
-  const handleForgotPassword = () => {
-    setCurrentScreen('resetPassword');
-  };
-
-  const handleBackToLogin = () => {
-    setCurrentScreen('login');
-  };
-
-  const handleSelectResetMethod = (method) => {
-    console.log('Selected verification method:', method);
-  };
-
   return (
-    <div className="min-h-screen">
-      {currentScreen === 'resetPassword' ? (
+    <div>
+      {currentScreen === 'verifyIdentity' ? (
+        <VerifyIdentity 
+          onSendOtp={(email) => console.log('Sending OTP to', email)}
+          onBackToLogin={() => setCurrentScreen('login')}
+          onBackToMethod={() => setCurrentScreen('resetPassword')}
+        />
+      ) : currentScreen === 'resetPassword' ? (
         <ResetPassword 
-          onSelectMethod={handleSelectResetMethod} 
-          onBackToLogin={handleBackToLogin} 
+          onSelectMethod={(method) => setCurrentScreen('verifyIdentity')} 
+          onBackToLogin={() => setCurrentScreen('login')}
         />
       ) : currentScreen === 'login' && selectedType === 'wholesaler' ? (
         <WholesalerLogin 
-          onSelectType={handleSelectType} 
-          onForgotPassword={handleForgotPassword}
+          onSelectType={(type) => setSelectedType(type)} 
+          onForgotPassword={() => setCurrentScreen('resetPassword')}
         />
       ) : (
-        <SelectType onSelectType={handleSelectType} />
+        <SelectType onSelectType={(type) => {
+          setSelectedType(type);
+          if (type === 'wholesaler') setCurrentScreen('login');
+        }} />
       )}
     </div>
   );
