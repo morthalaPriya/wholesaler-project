@@ -2,6 +2,7 @@ import DotIcon from "../assets/Dot-Icon.png";
 import ButtonIcon from "../assets/Button.png";
 import Button2 from "../assets/Button-2.png";
 import SearchIcon from "../assets/SearchIcon.png";
+import { NavLink } from "react-router-dom";
 function Messages() {
     return (
         <div className="flex flex-col w-[1051.2px] h-fit bg-[#FFFFFF] pt-[32px] px-[32px] gap-[24px]">
@@ -24,16 +25,16 @@ function Messages() {
                             Messages
                         </p>
                     </div>
-                    <div className="flex items-center justify-center w-[147.32px] h-[29px] rounded-[14px] px-[8px] py-[4px]">
-                        <p className="font-[Arial] font-normal text-[14px] leading-[20px] text-[#0A0A0A]">
-                            Templates
-                        </p>
-                    </div>
-                    <div className="flex items-center justify-center w-[147.32px] h-[29px] rounded-[14px] px-[8px] py-[4px]">
-                        <p className="font-[Arial] font-normal text-[14px] leading-[20px] text-[#0A0A0A]">
-                            Notifications
-                        </p>
-                    </div>
+                    <NavLink
+                        to="/messages/templates"
+                        className="w-[222px] h-[29px] flex items-center justify-center">
+                        <p className="font-[Arial] font-normal text-[14px] leading-[20px] text-[#0A0A0A]">Templates</p>
+                    </NavLink>
+                    <NavLink
+                        to="/messages/notifications"
+                        className="w-[147.32px] h-[29px] flex items-center justify-center">
+                        <p className="font-[Arial] font-normal text-[14px] leading-[20px] text-[#0A0A0A]">Notifications</p>
+                    </NavLink>
                 </div>
 
 
@@ -86,7 +87,7 @@ function Messages() {
                             <div className="flex flex-col w-[259.46px] h-[80.8px] border-b-[0.8px] border-black/10 bg-white">
                                 <div className="flex flex-row items-center justify-between w-full h-[80px] px-[16px] py-[12px]">
                                     <div className="flex items-center gap-[12px]">
-                                       <div className="relative w-[40px] h-[40px] shrink-0">
+                                        <div className="relative w-[40px] h-[40px] shrink-0">
                                             <div className="flex items-center justify-center w-[40px] h-[40px] rounded-full bg-[#ECECF0]">
                                                 <span className="font-[Arial] font-normal text-[14px] leading-[20px] text-[#0A0A0A]">Q</span>
                                             </div>
@@ -122,7 +123,7 @@ function Messages() {
                             </div>
                         </div>
                     </div>
-                    
+
 
                     <div className="flex flex-col w-[546.14px] h-[743.6px] rounded-[14px] border-[0.8px] border-black/10 bg-[#FFFFFF] gap-[24px]">
                         <div className="w-[544.54px] h-[106.8px] border-b-[0.8px] border-black/10">
@@ -137,7 +138,7 @@ function Messages() {
                                     </div>
                                 </div>
                                 <div className="flex items-center justify-center w-[36px] h-[36px] rounded-[8px]">
-                                    <img src={DotIcon} alt="More" className="w-[16px] h-[16px]"/>
+                                    <img src={DotIcon} alt="More" className="w-[16px] h-[16px]" />
                                 </div>
                             </div>
                         </div>
