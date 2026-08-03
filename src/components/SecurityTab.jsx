@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import shieldIcon from '../assets/Icon (13).png';
 import checkIcon from '../assets/Icon (4).png';
-import keyIcon from '../assets/Vector (1).png';
+import keyIcon from '../assets/Icon (33).png';
 
 export default function SecurityTab() {
   const [twoFactor, setTwoFactor] = useState(true);
@@ -93,12 +93,17 @@ export default function SecurityTab() {
               type="submit"
               className="px-4 py-2 bg-black text-white text-xs font-medium rounded-xl hover:bg-gray-800 transition-colors cursor-pointer flex items-center gap-2"
             >
-              <img src={keyIcon} alt="Key" className="w-3.5 h-3.5 object-contain invert" />
+              <img
+                src={keyIcon}
+                alt="Key"
+                className="w-3.5 h-3.5 object-contain brightness-0 invert"
+              />
               <span>Change Password</span>
             </button>
           </div>
         </form>
       </div>
+
       <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-xs space-y-4">
         <div>
           <h2 className="text-sm font-bold text-gray-900">
@@ -151,6 +156,7 @@ export default function SecurityTab() {
           </div>
         )}
       </div>
+
       <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-xs space-y-4">
         <div>
           <h2 className="text-sm font-bold text-gray-900">

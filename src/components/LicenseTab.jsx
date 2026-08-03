@@ -28,8 +28,10 @@ function DocumentRow({ title, uploadDate, status }) {
           <p className="text-xs text-gray-400">{uploadDate}</p>
         </div>
       </div>
-
-      <span className="inline-flex items-center justify-center h-6 px-3 bg-black text-white text-xs font-medium rounded-md">
+      <span 
+        onClick={() => alert(`${title} is currently ${status}`)}
+        className="inline-flex items-center justify-center h-6 px-3 bg-black text-white text-xs font-medium rounded-md cursor-pointer hover:bg-gray-800 transition-colors"
+      >
         {status}
       </span>
     </div>
@@ -42,6 +44,13 @@ export default function LicenseTab() {
   const handleFileChange = (e) => {
     if (e.target.files && e.target.files[0]) {
       setSelectedFile(e.target.files[0]);
+    }
+  };
+  const handleSubmitVerification = () => {
+    if (selectedFile) {
+      alert(`Successfully submitted "${selectedFile.name}" for verification!`);
+    } else {
+      alert('Please select a file to upload first!');
     }
   };
 
@@ -65,8 +74,10 @@ export default function LicenseTab() {
               Verified on Jan 15, 2025
             </p>
           </div>
-
-          <span className="inline-flex items-center gap-1 bg-emerald-100 text-emerald-800 text-xs font-medium px-2.5 py-1 rounded-full">
+          <span 
+            onClick={() => alert('This business license has already been verified.')}
+            className="inline-flex items-center gap-1 bg-emerald-100 text-emerald-800 text-xs font-medium px-2.5 py-1 rounded-full cursor-pointer hover:bg-emerald-200 transition-colors"
+          >
             <img src={verifiedIcon} alt="Verified" className="w-3.5 h-3.5 object-contain" />
             <span>Verified</span>
           </span>
@@ -103,9 +114,9 @@ export default function LicenseTab() {
             PDF, JPG, PNG up to 10MB
           </p>
         </label>
-
         <button
           type="button"
+          onClick={handleSubmitVerification}
           className="w-full h-10 bg-gray-900 text-white text-xs font-medium rounded-xl hover:bg-black transition-colors shadow-sm flex items-center justify-center cursor-pointer"
         >
           Submit for Verification
