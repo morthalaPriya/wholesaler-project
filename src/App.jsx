@@ -6,6 +6,8 @@ import Messages from "./Components-3/Messages";
 import MessagesTemplates from "./Components-3/MessagesTemplates";
 import MessagesNotifications from "./Components-3/MessagesNotifications";
 import AdminApprovals from "./Components-4/AdminApprovals";
+import AdminAnalytics from "./Components-4/AdminAnalytics";
+import AdminAuditLogs from "./Components-4/AdminAuditLogs";
 
 function Dashboard() {
   return <h1>Dashboard</h1>;
@@ -41,6 +43,8 @@ function App() {
 
 
             <Route path="/admin" element={<AdminApprovals/>}/>
+            <Route path="/admin/analytics" element={<AdminAnalytics/>}/>
+            <Route path="/admin/audit-logs" element={<AdminAuditLogs/>}/>
           </Routes>
         </div>
       </div>
