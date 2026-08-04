@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import SelectType from './components/loginPage';
+import SelectType from './components/LoginPage';
 import WholesalerLogin from './components/WholesalerLogin';
 import ResetPassword from './components/ResetPassword';
 import VerifyIdentity from './components/Verify';
 import EnterOtp from './components/EnterOtp';
+import CreateNewPassword from './components/NewPassword';
+import PasswordSuccess from './components/PasswordSuccess';
 
 function App() {
   const [selectedType, setSelectedType] = useState(null);
   const [currentScreen, setCurrentScreen] = useState('selectType');
-  
   const [selectedMethod, setSelectedMethod] = useState('email');
   const [targetDestination, setTargetDestination] = useState('');
 
@@ -23,13 +24,27 @@ function App() {
   }
 
   function handleVerifyOtp(otp) {
-    console.log('OTP Verified successfully:', otp);
-    alert(`OTP Verified: ${otp}`);
+    console.log('OTP Verified:', otp);
+    setCurrentScreen('createNewPassword');
+  }
+
+  function handleResetSuccess(newPassword) {
+    setCurrentScreen('passwordSuccess');
   }
 
   return (
     <div>
-      {currentScreen === 'enterOtp' ? (
+      {currentScreen === 'passwordSuccess' ? (
+        <PasswordSuccess
+          onBackToLogin={() => setCurrentScreen('login')}
+        />
+      ) : currentScreen === 'createNewPassword' ? (
+        <CreateNewPassword
+          onResetSuccess={handleResetSuccess}
+          onBackToLogin={() => setCurrentScreen('login')}
+          onBackToMethod={() => setCurrentScreen('enterOtp')}
+        />
+      ) : currentScreen === 'enterOtp' ? (
         <EnterOtp
           targetDestination={targetDestination}
           onVerifyOtp={handleVerifyOtp}

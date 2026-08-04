@@ -13,6 +13,11 @@ export default function WholesalerLogin({ onSelectType, onForgotPassword }) {
   const [password, setPassword] = useState('');
 
   function handleAccountTypeSelect(accountType) {
+    if (accountType === 'retailer') {
+      alert('Retailer portal is currently unavailable. Please continue as Wholesaler.');
+      return;
+    }
+
     setLoginMethod('password');
     if (onSelectType) {
       onSelectType(accountType);
@@ -33,9 +38,8 @@ export default function WholesalerLogin({ onSelectType, onForgotPassword }) {
 
   return (
     <div className="h-screen w-full flex flex-col md:flex-row font-sans overflow-hidden bg-[#f4f5f8]">
-
       <div
-        className="relative md:w-1/2 w-full p-6 md:p-10 text-white flex flex-col justify-center h-full overflow-hidden transition-colors duration-500"
+        className="relative md:w-1/2 w-full p-6 md:p-10 text-white flex flex-col justify-center h-full overflow-hidden transition-colors duration-500 shrink-0"
         style={{
           backgroundColor: isOtpSelected ? '#155DFC' : '#4E0860'
         }}
@@ -72,31 +76,29 @@ export default function WholesalerLogin({ onSelectType, onForgotPassword }) {
 
           <div className="flex justify-between items-start pt-2 max-w-[280px]">
             <div className="flex flex-col items-center text-center">
-              <h3 className="text-2xl md:text-[20px] font-bold text-white tracking-tight">10K+</h3>
+              <h3 className="text-2xl md:text-[22px] font-bold text-white tracking-tight">10K+</h3>
               <p className="text-white/80 text-[11px] md:text-xs mt-1 font-normal leading-tight">Active Users</p>
             </div>
             <div className="flex flex-col items-center text-center">
-              <h3 className="text-xl md:text-[20px] font-bold text-white tracking-tight">50K+</h3>
+              <h3 className="text-xl md:text-[22px] font-bold text-white tracking-tight">50K+</h3>
               <p className="text-white/80 text-[11px] md:text-xs mt-1 font-normal leading-tight">Products</p>
             </div>
             <div className="flex flex-col items-center text-center">
-              <h3 className="text-xl md:text-[20px] font-bold text-white tracking-tight">99%</h3>
+              <h3 className="text-xl md:text-[22px] font-bold text-white tracking-tight">99%</h3>
               <p className="text-white/80 text-[11px] md:text-xs mt-1 font-normal leading-tight">Satisfaction</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="md:w-1/2 w-full h-full flex items-center justify-center p-4 md:p-6 overflow-y-auto">
-        <div className="w-full max-w-[440px] bg-white p-6 md:p-8 rounded-xl shadow-2xl shadow-slate-600/50 border border-slate-100 my-auto">
-
+      <div className="md:w-1/2 w-full h-full flex items-center justify-center p-4 md:p-6 overflow-y-auto shrink-0">
+        <div className="w-full max-w-[440px] bg-white p-6 md:p-8 rounded-xl shadow-2xl shadow-slate-500/50 border border-slate-100 my-auto">
           <div className="text-center mb-4">
             <h2 className="text-lg font-bold text-slate-800">Welcome Back</h2>
             <p className="text-[11px] text-slate-500 mt-0.5">
               Select your account type to continue
             </p>
           </div>
-
           <div className="grid grid-cols-2 gap-3 mb-4">
             <button
               type="button"
@@ -106,7 +108,6 @@ export default function WholesalerLogin({ onSelectType, onForgotPassword }) {
               <img src={wholesalerIcon} alt="Wholesaler" className="w-4 h-4 object-contain invert" />
               <span className="text-xs font-semibold tracking-wide">Wholesaler</span>
             </button>
-
             <button
               type="button"
               onClick={() => handleAccountTypeSelect('retailer')}
@@ -116,7 +117,6 @@ export default function WholesalerLogin({ onSelectType, onForgotPassword }) {
               <span className="text-xs font-semibold tracking-wide">Retailer</span>
             </button>
           </div>
-
           <div className="bg-[#ECECF0] p-1 rounded-2xl flex mb-4">
             <button
               type="button"
@@ -143,7 +143,6 @@ export default function WholesalerLogin({ onSelectType, onForgotPassword }) {
               OTP
             </button>
           </div>
-
           <form onSubmit={handleSubmit} className="space-y-3">
             <div>
               <label className="block text-[11px] font-semibold text-slate-700 mb-1">
@@ -204,16 +203,14 @@ export default function WholesalerLogin({ onSelectType, onForgotPassword }) {
               {isOtpSelected ? 'Send OTP' : 'Sign In'}
             </button>
           </form>
-
           <div className="relative my-4 text-center">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-slate-200"></div>
             </div>
-            <span className="relative bg-white px-3 text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+            <span className="relative bg-white px-3 text-[10px] font-bold text-slate-600 uppercase tracking-wider">
               OR CONTINUE WITH
             </span>
           </div>
-
           <div className="grid grid-cols-2 gap-3 mb-4">
             <button
               type="button"
@@ -231,10 +228,9 @@ export default function WholesalerLogin({ onSelectType, onForgotPassword }) {
               Apple
             </button>
           </div>
-
-          <div className="text-center text-xs text-slate-500">
+          <div className="text-center text-[13px] text-slate-500">
             New to the platform?{' '}
-            <a href="#register" className="font-medium text-slate-900 hover:underline">
+            <a href="#register" className="font-medium text-[15px] text-slate-900 hover:underline">
               Register as Wholesaler
             </a>
           </div>

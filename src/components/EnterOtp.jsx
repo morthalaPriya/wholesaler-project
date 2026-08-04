@@ -110,15 +110,15 @@ export default function EnterOtp({
 
           <div className="flex justify-between items-start pt-2 max-w-[230px]">
             <div className="flex flex-col items-center text-center">
-              <h3 className="text-2xl md:text-[20px] font-bold text-white tracking-tight">100%</h3>
+              <h3 className="text-2xl md:text-[23px] font-bold text-white tracking-tight">100%</h3>
               <p className="text-white/80 text-[11px] md:text-sm mt-1 font-normal leading-tight">Secure</p>
             </div>
             <div className="flex flex-col items-center text-center">
-              <h3 className="text-2xl md:text-[20px] font-bold text-white tracking-tight">2-Step</h3>
+              <h3 className="text-2xl md:text-[23px] font-bold text-white tracking-tight">2-Step</h3>
               <p className="text-white/80 text-[11px] md:text-xs mt-1 font-normal leading-tight">Verification</p>
             </div>
             <div className="flex flex-col items-center text-center">
-              <h3 className="text-2xl md:text-[20px] font-bold text-white tracking-tight">24/7</h3>
+              <h3 className="text-2xl md:text-[23px] font-bold text-white tracking-tight">24/7</h3>
               <p className="text-white/80 text-[11px] md:text-xs mt-1 font-normal leading-tight">Support</p>
             </div>
           </div>
@@ -126,7 +126,7 @@ export default function EnterOtp({
       </div>
 
       <div className="md:w-1/2 w-full flex items-center justify-center p-6 md:p-12">
-        <div className="w-full max-w-[460px] h-[480px] bg-white p-8 md:p-10 rounded-2xl shadow-2xl shadow-slate-500/50 border border-slate-100 flex flex-col justify-center">
+        <div className="w-full max-w-[460px] h-[480px] bg-white p-8 md:p-10 rounded-xl shadow-2xl shadow-slate-500/50 border border-slate-100 flex flex-col justify-center">
           <div className="text-center mb-6">
             <h2 className="text-lg font-semibold text-slate-900 tracking-tight">
               Enter Verification Code
@@ -159,7 +159,7 @@ export default function EnterOtp({
                     onChange={(e) => handleChange(e, index)}
                     onKeyDown={(e) => handleKeyDown(e, index)}
                     onPaste={handlePaste}
-                    className="w-12 h-12 text-center text-sm font-semibold bg-[#F3F4F6] border border-transparent rounded-xl text-slate-800 focus:outline-none focus:bg-white focus:border-slate-300 transition-all cursor-pointer "
+                    className="w-12 h-12 text-center text-sm font-semibold bg-[#F3F3F5] border border-transparent rounded-xl text-slate-800 focus:outline-none focus:bg-white focus:border-slate-300 transition-all cursor-pointer "
                   />
                 ))}
               </div>
@@ -199,16 +199,18 @@ export default function EnterOtp({
             )}
           </div>
 
-          <div className="flex items-center justify-center gap-4 text-xs mt-8">
-            <span className="text-slate-400">Remember your <br></br><center>password?</center></span>
-            <button
-              type="button"
-              onClick={onBackToLogin}
-              className="font-semibold text-slate-900 hover:underline transition-all cursor-pointer"
-            >
-              Back to Login
-            </button>
-          </div>
+          <div className="flex items-start justify-center gap-5  mt-4">
+          <span className="text-xs text-slate-400 text-right leading-[1.28] block translate-y-[0px]">
+            Remember your <br /> <center>password?</center>
+          </span>
+          <button
+            type="button"
+            onClick={onBackToLogin}
+            className="font-semibold text-[13px] text-slate-900 hover:underline transition-all cursor-pointer"
+          >
+            Back to Login
+          </button>
+        </div>
 
         </div>
       </div>

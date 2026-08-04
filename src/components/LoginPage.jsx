@@ -15,7 +15,7 @@ export default function SelectType({ onSelectType }) {
       </div>
 
       <div className="md:w-1/2 w-full flex items-center justify-center p-8 bg-white">
-        <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-2xl shadow-slate-600/50 border border-slate-100">
+        <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-2xl shadow-slate-500/50 border border-slate-100">
           
           <div className="text-center mb-8">
             <h1 className="text-2xl font-bold text-slate-800 tracking-tight">
