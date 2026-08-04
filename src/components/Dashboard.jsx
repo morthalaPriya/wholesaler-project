@@ -25,7 +25,7 @@ import {
   Users2
 } from 'lucide-react';
 
-// Sales Overview Data
+
 const salesData = [
   { name: 'Jan', sales: 4000 },
   { name: 'Feb', sales: 3000 },
@@ -59,10 +59,10 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
   return (
     <div className="min-h-screen bg-[#F8FAFC] flex font-sans antialiased text-[#0F172A] w-full">
       
-      {/* Sidebar */}
+      
       <aside className="w-64 bg-white border-r border-slate-200 flex flex-col justify-between shrink-0">
         <div>
-          {/* Logo Brand */}
+          
           <div className="h-16 px-6 flex items-center gap-3 border-b border-slate-100">
             <div className="w-8 h-8 bg-[#030213] rounded-xl flex items-center justify-center text-white">
               <Package className="w-4 h-4" />
@@ -70,7 +70,7 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
             <span className="font-bold text-sm tracking-wide text-[#0F172A]">B2B Platform</span>
           </div>
 
-          {/* Navigation Links */}
+        
           <nav className="p-4 space-y-1 text-xs font-medium">
             <button
               type="button"
@@ -162,7 +162,7 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
           </nav>
         </div>
 
-        {/* User Profile Footer */}
+        
         <div className="p-4 border-t border-slate-100 flex items-center gap-3">
           <div className="w-9 h-9 rounded-full bg-slate-200 flex items-center justify-center font-bold text-xs text-slate-700">
             {formData?.companyName ? formData.companyName.charAt(0).toUpperCase() : 'A'}
@@ -178,16 +178,16 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
         </div>
       </aside>
 
-      {/* Main Content Area */}
+      
       <main className="flex-1 p-8 overflow-y-auto space-y-6">
         
-        {/* Top Header */}
+        
         <div>
           <h1 className="text-xl font-bold text-[#0F172A]">Dashboard</h1>
           <p className="text-xs text-slate-400 mt-0.5">Welcome back, here's your business summary</p>
         </div>
 
-        {/* Top Metric Cards */}
+        
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm">
             <div className="flex justify-between items-center mb-3">
@@ -238,10 +238,10 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
           </div>
         </div>
 
-        {/* Charts Row using Recharts */}
+        
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           
-          {/* Sales Overview Card (Takes 2 columns to match the design proportions) */}
+          
           <div className="lg:col-span-2 bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col justify-between">
             <div className="mb-4">
               <h3 className="text-base font-medium text-[#0F172A]">Sales Overview</h3>
@@ -289,7 +289,7 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
             </div>
           </div>
 
-          {/* Product Categories Pie Chart */}
+          
           <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between">
             <div>
               <h3 className="text-sm font-semibold text-[#0F172A]">Product Categories</h3>
@@ -330,7 +330,7 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
               </ResponsiveContainer>
             </div>
 
-            {/* Legend section to completely mirror the visual layout */}
+            
             <div className="flex flex-col gap-2 text-xs font-[Arial] pt-2 border-t border-slate-100">
               <div className="flex justify-between items-center">
                 <span className="flex items-center gap-1.5 text-[#0066FF] font-medium">
@@ -361,7 +361,7 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
 
         </div>
 
-        {/* Recent Orders Card */}
+        
         <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
           <div className="mb-5">
             <h3 className="text-sm font-semibold text-[#0F172A]">Recent Orders</h3>
@@ -393,7 +393,7 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
           </div>
         </div>
 
-        {/* Bottom Quick Action Cards */}
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <button 
             type="button"

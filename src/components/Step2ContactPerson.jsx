@@ -13,14 +13,14 @@ export default function Step2ContactPerson({ formData, updateFormData, onNext, o
 
   return (
     <div>
-      {/* Header */}
+      
       <div className="mb-6">
         <h2 className="text-base font-semibold text-[#0F172A]">Owner/Contact Person</h2>
         <p className="text-xs text-[#94A3B8] mt-0.5">Primary contact information</p>
       </div>
 
       <form className="space-y-4" onSubmit={handleSubmit}>
-        {/* Full Name */}
+        
         <div>
           <label className="block text-xs font-semibold text-[#334155] mb-1.5">
             Full Name <span className="text-red-500">*</span>
@@ -39,7 +39,7 @@ export default function Step2ContactPerson({ formData, updateFormData, onNext, o
           </div>
         </div>
 
-        {/* Designation */}
+        
         <div>
           <label className="block text-xs font-semibold text-[#334155] mb-1.5">
             Designation <span className="text-red-500">*</span>
@@ -55,9 +55,9 @@ export default function Step2ContactPerson({ formData, updateFormData, onNext, o
           />
         </div>
 
-        {/* Email & Phone Grid */}
+        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* Email Address */}
+          
           <div>
             <label className="block text-xs font-semibold text-[#334155] mb-1.5">
               Email Address <span className="text-red-500">*</span>
@@ -76,7 +76,7 @@ export default function Step2ContactPerson({ formData, updateFormData, onNext, o
             </div>
           </div>
 
-          {/* Phone Number */}
+        
           <div>
             <label className="block text-xs font-semibold text-[#334155] mb-1.5">
               Phone Number <span className="text-red-500">*</span>
@@ -96,7 +96,7 @@ export default function Step2ContactPerson({ formData, updateFormData, onNext, o
           </div>
         </div>
 
-        {/* Navigation Buttons */}
+        
         <div className="flex justify-between items-center pt-8">
           <button
             type="button"

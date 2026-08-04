@@ -13,7 +13,7 @@ export default function Step4AddressWarehouse({ formData, updateFormData, onNext
     onNext();
   };
 
-  // Handler to fetch current device location
+  
   const handleGetLocation = () => {
     if (!navigator.geolocation) {
       alert('Geolocation is not supported by your browser.');
@@ -42,16 +42,16 @@ export default function Step4AddressWarehouse({ formData, updateFormData, onNext
 
   return (
     <div>
-      {/* Title & Subtitle */}
+      
       <div className="mb-6">
         <h2 className="text-base font-semibold text-[#0F172A]">Address & Warehouse</h2>
         <p className="text-xs text-[#94A3B8] mt-0.5">Where are you located?</p>
       </div>
 
       <form className="space-y-4" onSubmit={handleSubmit}>
-        {/* Country / State / City Grid */}
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-          {/* Country */}
+          
           <div>
             <label className="block text-xs font-semibold text-[#334155] mb-1.5">
               Country <span className="text-red-500">*</span>
@@ -84,7 +84,7 @@ export default function Step4AddressWarehouse({ formData, updateFormData, onNext
             </div>
           </div>
 
-          {/* State / Province */}
+          
           <div>
             <label className="block text-xs font-semibold text-[#334155] mb-1.5">
               State/Province <span className="text-red-500">*</span>
@@ -100,7 +100,7 @@ export default function Step4AddressWarehouse({ formData, updateFormData, onNext
             />
           </div>
 
-          {/* City */}
+          
           <div>
             <label className="block text-xs font-semibold text-[#334155] mb-1.5">
               City <span className="text-red-500">*</span>
@@ -117,7 +117,7 @@ export default function Step4AddressWarehouse({ formData, updateFormData, onNext
           </div>
         </div>
 
-        {/* Street Address */}
+        
         <div>
           <label className="block text-xs font-semibold text-[#334155] mb-1.5">
             Street Address <span className="text-red-500">*</span>
@@ -133,12 +133,12 @@ export default function Step4AddressWarehouse({ formData, updateFormData, onNext
           />
         </div>
 
-        {/* Section Divider / Title */}
+        
         <div className="pt-2">
           <h3 className="text-xs font-semibold text-[#334155]">Warehouse Details (Optional)</h3>
         </div>
 
-        {/* Warehouse Name */}
+        
         <div>
           <label className="block text-xs font-semibold text-[#334155] mb-1.5">
             Warehouse Name
@@ -153,7 +153,7 @@ export default function Step4AddressWarehouse({ formData, updateFormData, onNext
           />
         </div>
 
-        {/* Warehouse Address */}
+        
         <div>
           <label className="block text-xs font-semibold text-[#334155] mb-1.5">
             Warehouse Address
@@ -168,7 +168,7 @@ export default function Step4AddressWarehouse({ formData, updateFormData, onNext
           />
         </div>
 
-        {/* Interactive Click-to-Locate Map Box */}
+        
         <div className="pt-1">
           <button
             type="button"
@@ -196,7 +196,7 @@ export default function Step4AddressWarehouse({ formData, updateFormData, onNext
           </button>
         </div>
 
-        {/* Navigation Buttons */}
+        
         <div className="flex justify-between items-center pt-6">
           <button
             type="button"

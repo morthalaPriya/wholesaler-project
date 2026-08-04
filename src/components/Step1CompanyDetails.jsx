@@ -19,7 +19,7 @@ export default function Step1CompanyDetails({ formData, updateFormData, onNext }
       </div>
 
       <form className="space-y-4" onSubmit={handleSubmit}>
-        {/* Company Name */}
+        
         <div>
           <label className="block text-xs font-semibold text-slate-700 mb-1">
             Company Name <span className="text-red-500">*</span>
@@ -38,7 +38,7 @@ export default function Step1CompanyDetails({ formData, updateFormData, onNext }
           </div>
         </div>
 
-        {/* Business Type */}
+        
         <div>
           <label className="block text-xs font-semibold text-slate-700 mb-1">
             Business Type <span className="text-red-500">*</span>
@@ -60,7 +60,7 @@ export default function Step1CompanyDetails({ formData, updateFormData, onNext }
           </div>
         </div>
 
-        {/* Email & Phone */}
+        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-xs font-semibold text-slate-700 mb-1">
@@ -99,7 +99,7 @@ export default function Step1CompanyDetails({ formData, updateFormData, onNext }
           </div>
         </div>
 
-        {/* Logo Drag & Drop */}
+        
         <div>
           <label className="block text-xs font-semibold text-slate-700 mb-1">
             Company Logo (Optional)
@@ -113,7 +113,7 @@ export default function Step1CompanyDetails({ formData, updateFormData, onNext }
           </div>
         </div>
 
-        {/* Continue Button */}
+        
         <div className="flex justify-end pt-4">
           <button
             type="submit"
