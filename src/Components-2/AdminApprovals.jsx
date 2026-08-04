@@ -188,7 +188,7 @@ function AdminApprovals() {
                         </button>
                         <button className="flex items-center justify-center gap-[8px] w-[101.72px] h-[32px] rounded-[8px] border-[0.8px] border-black/10 bg-white">
                           <img src={AdminIcon2} className="w-[16px] h-[16px]" />
-                          <span className="font-[Arial] font-[400] text-[14px] leading-[20px] text-[#0A0A0A]"> Approve </span>
+                          <span className="font-[Arial] font-[400] text-[14px] leading-[20px] text-[#0A0A0A]">Approve</span>
                         </button>
                       </div>
                     </div>
@@ -258,7 +258,7 @@ function AdminApprovals() {
                     </div>
                     <div className="flex items-center w-[111.36px] h-[48.8px]">
                       <div className="flex items-center w-[71px] h-[20px] ml-[8px]">
-                        <p className="font-[Arial] font-[400] text-[14px] leading-[20px] tracking-[0px] text-[#0A0A0A]"> Jane Smith </p>
+                        <p className="font-[Arial] font-[400] text-[14px] leading-[20px] tracking-[0px] text-[#0A0A0A]">Jane Smith</p>
                       </div>
                     </div>
                     <div className="flex items-center w-[87.58px] h-[48.8px]">

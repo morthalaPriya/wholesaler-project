@@ -21,15 +21,15 @@ function ShippingLogistics() {
             <div className="flex flex-col h-[1344.75px] flex-1 pb-[24px] gap-[32px]">
                 <div className="w-[672px] h-[36px] rounded-[14px] bg-[#ECECF0] flex items-center p-[4px]">
                     <div className="w-[222px] h-[29px] rounded-[14px] bg-[#FFFFFF] flex items-center justify-center">
-                        <p className="w-[60px] h-[20px] font-[Arial] font-[400] text-[14px] leading-[20px] tracking-[0px] text-[#0A0A0A]"> Shipments </p>
+                        <p className="w-[67px] h-[20px] font-[Arial] font-[400] text-[14px] leading-[20px] tracking-[0px] text-[#0A0A0A]">Shipments</p>
                     </div>
                     <NavLink
                         to="/shipping/providers"
                         className="w-[222px] h-[29px] flex items-center justify-center">
-                        <p>Providers</p>
+                        <p className="w-[60px] h-[20px] font-[Arial] font-[400] text-[14px] leading-[20px] tracking-[0px] text-[#0A0A0A]">Providers</p>
                     </NavLink>
                     <div className="w-[222px] h-[29px] flex items-center justify-center">
-                        <p className="w-[96px] h-[20px] font-[Arial] font-[400] text-[14px] leading-[20px] tracking-[0px] text-[#0A0A0A]"> Cost Calculator </p>
+                        <p className="w-[96px] h-[20px] font-[Arial] font-[400] text-[14px] leading-[20px] tracking-[0px] text-[#0A0A0A]">Cost Calculator</p>
                     </div>
                 </div>
 
@@ -196,7 +196,7 @@ function ShippingLogistics() {
                                         <p className="font-[Arial] font-normal text-[16px] leading-[24px] tracking-[0px] text-[#0A0A0A]">New York, NY</p>
                                     </div>
                                     <div className="w-[382.8px] h-[48px] flex flex-col gap-[4px]">
-                                        <p className="font-[Arial] font-normal text-[14px] leading-[20px] tracking-[0px] text-[#717182]"> Destination </p>
+                                        <p className="font-[Arial] font-normal text-[14px] leading-[20px] tracking-[0px] text-[#717182]">Destination</p>
                                         <p className="font-[Arial] font-normal text-[16px] leading-[24px] tracking-[0px] text-[#0A0A0A]">Chicago, IL</p>
                                     </div>
                                 </div>

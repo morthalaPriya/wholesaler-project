@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import ShippingLogistics from "./components/ShippingLogistics";
-import ShippingProviders from "./Components-2/ShippingProviders";
-import Messages from "./Components-3/Messages";
-import MessagesTemplates from "./Components-3/MessagesTemplates";
-import MessagesNotifications from "./Components-3/MessagesNotifications";
-import AdminApprovals from "./Components-4/AdminApprovals";
-import AdminAnalytics from "./Components-4/AdminAnalytics";
-import AdminAuditLogs from "./Components-4/AdminAuditLogs";
+import ShippingProviders from "./Components/ShippingProviders";
+import Messages from "./Components-1/Messages";
+import MessagesTemplates from "./Components-1/MessagesTemplates";
+import MessagesNotifications from "./Components-1/MessagesNotifications";
+import AdminApprovals from "./Components-2/AdminApprovals";
+import AdminAnalytics from "./Components-2/AdminAnalytics";
+import AdminAuditLogs from "./Components-2/AdminAuditLogs";
 
 function Dashboard() {
   return <h1>Dashboard</h1>;
@@ -53,3 +53,4 @@ function App() {
 }
 
 export default App;
+

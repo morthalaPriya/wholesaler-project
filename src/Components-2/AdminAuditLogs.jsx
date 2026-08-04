@@ -32,9 +32,7 @@ function AdminAuditLogs() {
                         <p className="font-[Arial] font-normal text-[14px] leading-[20px] text-[#0A0A0A]">Analytics</p>
                     </NavLink>
                     <div className="flex items-center justify-center h-full rounded-[14px] border-[0.8px] border-[#E4E4E7] bg-[#FFFFFF]">
-                        <p className="font-[Arial] font-[400] text-[14px] leading-[20px] text-[#0A0A0A]">
-                            Audit Logs
-                        </p>
+                        <p className="font-[Arial] font-[400] text-[14px] leading-[20px] text-[#0A0A0A]">Audit Logs</p>
                     </div>
                 </div>
 

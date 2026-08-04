@@ -55,13 +55,11 @@ function MessagesTemplates() {
                                             </h3>
                                         </div>
                                         <div className="flex items-center justify-center w-[54.31px] h-[21.59px] rounded-[8px] bg-[#ECEEF2]">
-                                            <p className="font-[Arial] font-normal text-[12px] leading-[16px] tracking-[0px] text-[#030213]">
-                                                Orders
-                                            </p>
+                                            <p className="font-[Arial] font-normal text-[12px] leading-[16px] tracking-[0px] text-[#030213]">Orders</p>
                                         </div>
                                     </div>
                                     <button className="flex items-center justify-center w-[48.92px] h-[32px] rounded-[8px] border-[0.8px] border-black/10 bg-white px-[12px] gap-[6px]">
-                                        <span className="font-[Arial] font-normal text-[12px] leading-[16px] tracking-[0px] text-[#0A0A0A]"> Use </span>
+                                        <span className="font-[Arial] font-normal text-[12px] leading-[16px] tracking-[0px] text-[#0A0A0A]">Use</span>
                                     </button>
                                 </div>
                                 <div className="w-[333.2px] h-[60px]">
@@ -81,13 +79,11 @@ function MessagesTemplates() {
                                             </h3>
                                         </div>
                                         <div className="flex items-center justify-center w-[55.2px] h-[21.59px] rounded-[8px] bg-[#ECEEF2]">
-                                            <p className="font-[Arial] font-normal text-[12px] leading-[16px] tracking-[0px] text-[#030213]">
-                                                Pricing
-                                            </p>
+                                            <p className="font-[Arial] font-normal text-[12px] leading-[16px] tracking-[0px] text-[#030213]">Pricing</p>
                                         </div>
                                     </div>
                                     <button className="flex items-center justify-center w-[48.92px] h-[32px] rounded-[8px] border-[0.8px] border-black/10 bg-white px-[12px] gap-[6px]">
-                                        <span className="font-[Arial] font-normal text-[12px] leading-[16px] tracking-[0px] text-[#0A0A0A]"> Use </span>
+                                        <span className="font-[Arial] font-normal text-[12px] leading-[16px] tracking-[0px] text-[#0A0A0A]">Use</span>
                                     </button>
                                 </div>
                                 <div className="w-[333.2px] h-[60px]">
@@ -109,13 +105,11 @@ function MessagesTemplates() {
                                             </h3>
                                         </div>
                                         <div className="flex items-center justify-center w-[65.51px] h-[21.59px] rounded-[8px] bg-[#ECEEF2]">
-                                            <p className="font-[Arial] font-normal text-[12px] leading-[16px] tracking-[0px] text-[#030213]">
-                                                Products
-                                            </p>
+                                            <p className="font-[Arial] font-normal text-[12px] leading-[16px] tracking-[0px] text-[#030213]">Products</p>
                                         </div>
                                     </div>
                                     <button className="flex items-center justify-center w-[48.92px] h-[32px] rounded-[8px] border-[0.8px] border-black/10 bg-white px-[12px] gap-[6px]">
-                                        <span className="font-[Arial] font-normal text-[12px] leading-[16px] tracking-[0px] text-[#0A0A0A]"> Use </span>
+                                        <span className="font-[Arial] font-normal text-[12px] leading-[16px] tracking-[0px] text-[#0A0A0A]">Use</span>
                                     </button>
                                 </div>
                                 <div className="w-[333.2px] h-[60px]">
@@ -135,13 +129,11 @@ function MessagesTemplates() {
                                             </h3>
                                         </div>
                                         <div className="flex items-center justify-center w-[64.97px] h-[21.59px] rounded-[8px] bg-[#ECEEF2]">
-                                            <p className="font-[Arial] font-normal text-[12px] leading-[16px] tracking-[0px] text-[#030213]">
-                                                Payment
-                                            </p>
+                                            <p className="font-[Arial] font-normal text-[12px] leading-[16px] tracking-[0px] text-[#030213]">Payment</p>
                                         </div>
                                     </div>
                                     <button className="flex items-center justify-center w-[48.92px] h-[32px] rounded-[8px] border-[0.8px] border-black/10 bg-white px-[12px] gap-[6px]">
-                                        <span className="font-[Arial] font-normal text-[12px] leading-[16px] tracking-[0px] text-[#0A0A0A]"> Use </span>
+                                        <span className="font-[Arial] font-normal text-[12px] leading-[16px] tracking-[0px] text-[#0A0A0A]">Use</span>
                                     </button>
                                 </div>
                                 <div className="w-[333.2px] h-[60px]">

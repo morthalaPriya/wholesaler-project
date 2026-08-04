@@ -21,9 +21,7 @@ function Messages() {
             <div className="flex flex-col h-[835.6px] gap-[32px]">
                 <div className="flex flex-row items-center w-[448px] h-[36px] rounded-[14px] bg-[#ECECF0] p-[3px]">
                     <div className="flex items-center justify-center w-[147.32px] h-[29px] rounded-[14px] border-[0.8px] border-[#E4E4E7] bg-[#FFFFFF] px-[8px] py-[4px]">
-                        <p className="font-[Arial] font-normal text-[14px] leading-[20px] text-[#0A0A0A]">
-                            Messages
-                        </p>
+                        <p className="font-[Arial] font-normal text-[14px] leading-[20px] text-[#0A0A0A]">Messages</p>
                     </div>
                     <NavLink
                         to="/messages/templates"
@@ -53,18 +51,18 @@ function Messages() {
                                     <div className="flex items-center gap-[12px] flex-1 min-w-0">
                                         <div className="relative w-[40px] h-[40px] shrink-0">
                                             <div className="flex items-center justify-center w-[40px] h-[40px] rounded-full bg-[#ECECF0]">
-                                                <span className="font-[Arial] font-normal text-[14px] leading-[20px] text-[#0A0A0A]"> A </span>
+                                                <span className="font-[Arial] font-normal text-[14px] leading-[20px] text-[#0A0A0A]">A</span>
                                             </div>
                                             <div className="absolute bottom-[2px] right-[2px] w-[8px] h-[8px] rounded-full bg-[#22C55E] border-[1px] border-white"></div>
                                         </div>
                                         <div className="flex flex-col gap-[4px] flex-1 min-w-0">
-                                            <h3 className="font-[Arial] font-normal text-[14px] leading-[20px] text-[#0A0A0A]"> ABC Retail Store </h3>
+                                            <h3 className="font-[Arial] font-normal text-[14px] leading-[20px] text-[#0A0A0A]">ABC Retail Store</h3>
                                             <div className="flex items-center gap-[6px]">
-                                                <p className="flex-1 truncate font-[Arial] font-normal text-[12px] leading-[16px] text-[#717182]"> When will the order be shipped? </p>
+                                                <p className="flex-1 truncate font-[Arial] font-normal text-[12px] leading-[16px] text-[#717182]">When will the order be shipped?</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <p className="ml-[12px] shrink-0 font-[Arial] font-normal text-[12px] leading-[16px] text-[#717182]"> 1h </p>
+                                    <p className="ml-[12px] shrink-0 font-[Arial] font-normal text-[12px] leading-[16px] text-[#717182]">1h</p>
                                 </div>
                             </div>
 
@@ -72,10 +70,10 @@ function Messages() {
                                 <div className="flex flex-row items-center justify-between w-full h-[80px] px-[16px] py-[12px]">
                                     <div className="flex items-center gap-[12px]">
                                         <div className="flex items-center justify-center w-[40px] h-[40px] rounded-full bg-[#ECECF0]">
-                                            <span className="font-[Arial] font-normal text-[14px] leading-[20px] text-[#717182]"> X </span>
+                                            <span className="font-[Arial] font-normal text-[14px] leading-[20px] text-[#717182]">X</span>
                                         </div>
                                         <div className="flex flex-col gap-[4px]">
-                                            <h3 className="font-[Arial] font-normal text-[14px] leading-[20px] text-[#0A0A0A]"> XYZ Market </h3>
+                                            <h3 className="font-[Arial] font-normal text-[14px] leading-[20px] text-[#0A0A0A]">XYZ Market</h3>
                                             <p className="font-[Arial] font-normal text-[12px] leading-[16px] text-[#717182]">
                                                 Thanks for the quick response!
                                             </p>
@@ -94,7 +92,7 @@ function Messages() {
                                             <div className="absolute bottom-[2px] right-[2px] w-[8px] h-[8px] rounded-full bg-[#22C55E] border-[1px] border-white"></div>
                                         </div>
                                         <div className="flex flex-col gap-[4px]">
-                                            <h3 className="font-[Arial] font-normal text-[14px] leading-[20px] text-[#0A0A0A]"> Quick Shop </h3>
+                                            <h3 className="font-[Arial] font-normal text-[14px] leading-[20px] text-[#0A0A0A]">Quick Shop</h3>
                                             <div className="flex items-center gap-[6px]">
                                                 <p className="font-[Arial] font-normal text-[12px] leading-[16px] text-[#717182]">
                                                     Do you have bulk discounts available?
@@ -102,7 +100,7 @@ function Messages() {
                                             </div>
                                         </div>
                                     </div>
-                                    <p className="font-[Arial] font-normal text-[12px] leading-[16px] text-[#717182]"> 2d </p>
+                                    <p className="font-[Arial] font-normal text-[12px] leading-[16px] text-[#717182]">2d</p>
                                 </div>
                             </div>
 
@@ -110,10 +108,10 @@ function Messages() {
                                 <div className="flex flex-row items-center justify-between w-full h-[80px] px-[16px] py-[12px]">
                                     <div className="flex items-center gap-[12px]">
                                         <div className="flex items-center justify-center w-[40px] h-[40px] rounded-full bg-[#ECECF0]">
-                                            <span className="font-[Arial] font-normal text-[14px] leading-[20px] text-[#717182]"> G </span>
+                                            <span className="font-[Arial] font-normal text-[14px] leading-[20px] text-[#717182]">G</span>
                                         </div>
                                         <div className="flex flex-col gap-[4px]">
-                                            <h3 className="font-[Arial] font-normal text-[14px] leading-[20px] text-[#0A0A0A]"> Global traders </h3>
+                                            <h3 className="font-[Arial] font-normal text-[14px] leading-[20px] text-[#0A0A0A]">Global traders</h3>
                                             <p className="font-[Arial] font-normal text-[12px] leading-[16px] text-[#717182]">
                                                 Products catalog looks great
                                             </p>
@@ -130,11 +128,11 @@ function Messages() {
                             <div className="flex flex-row justify-between w-[496.54px] h-[52px] mt-[24px] ml-[24px]">
                                 <div className="flex flex-row items-center w-[184.14px] h-[52px] gap-[12px]">
                                     <div className="flex items-center justify-center w-[40px] h-[40px] rounded-full bg-[#ECECF0]">
-                                        <span className="font-[Arial] font-normal text-[14px] leading-[20px] text-[#0A0A0A]"> A </span>
+                                        <span className="font-[Arial] font-normal text-[14px] leading-[20px] text-[#0A0A0A]">A</span>
                                     </div>
                                     <div className="flex flex-col w-[132.14px] h-[52px]">
-                                        <h3 className="w-[137px] h-[28px] font-[Arial] font-normal text-[18px] leading-[28px] tracking-[0px] text-[#0A0A0A]"> ABC Retail Store </h3>
-                                        <p className="w-[47px] h-[24px] font-[Arial] font-normal text-[16px] leading-[24px] tracking-[0px] text-[#717182]"> Online </p>
+                                        <h3 className="w-[137px] h-[28px] font-[Arial] font-normal text-[18px] leading-[28px] tracking-[0px] text-[#0A0A0A]">ABC Retail Store</h3>
+                                        <p className="w-[47px] h-[24px] font-[Arial] font-normal text-[16px] leading-[24px] tracking-[0px] text-[#717182]">Online</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center justify-center w-[36px] h-[36px] rounded-[8px]">
@@ -150,7 +148,7 @@ function Messages() {
                                         <p className="font-[Arial] font-normal text-[14px] leading-[20px] text-[#0A0A0A]">
                                             Hi! I have a question about your product catalog.
                                         </p>
-                                        <p className="font-[Arial] font-normal text-[12px] leading-[16px] text-[#717182]"> 10:15 AM </p>
+                                        <p className="font-[Arial] font-normal text-[12px] leading-[16px] text-[#717182]">10:15 AM</p>
                                     </div>
                                 </div>
                                 <div className="flex justify-end">
@@ -158,7 +156,7 @@ function Messages() {
                                         <p className="font-[Arial] font-normal text-[14px] leading-[20px] text-white">
                                             Hello! I'd be happy to help. What would you like to know?
                                         </p>
-                                        <p className="font-[Arial] font-normal text-[12px] leading-[16px] text-white/70"> 10:16 AM </p>
+                                        <p className="font-[Arial] font-normal text-[12px] leading-[16px] text-white/70">10:16 AM</p>
                                     </div>
                                 </div>
                                 <div className="w-fit">
@@ -166,7 +164,7 @@ function Messages() {
                                         <p className="font-[Arial] font-normal text-[14px] leading-[20px] text-[#0A0A0A]">
                                             When will the order #12345 be shipped?
                                         </p>
-                                        <p className="font-[Arial] font-normal text-[12px] leading-[16px] text-[#717182]"> 10:30 AM </p>
+                                        <p className="font-[Arial] font-normal text-[12px] leading-[16px] text-[#717182]">10:30 AM</p>
                                     </div>
                                 </div>
                             </div>
