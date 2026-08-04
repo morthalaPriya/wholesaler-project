@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import shieldIcon from '../assets/Icon (13).png';
+import shieldIcon from '../assets/Icon (5).png';
 import checkIcon from '../assets/Icon (4).png';
-import keyIcon from '../assets/Icon (33).png';
+import keyIcon from '../assets/Icon (18).png';
 
 export default function SecurityTab() {
   const [twoFactor, setTwoFactor] = useState(true);

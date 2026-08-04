@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import uploadIcon from '../assets/Icon (24).png';
-import verifiedIcon from '../assets/Icon (4).png';
-import docIcon from '../assets/Icon (8).png';
+import uploadIcon from '../assets/Icon (13).png';
+import verifiedIcon from '../assets/Icon (3).png';
+import docIcon from '../assets/Icon (4).png';
 
 const documentList = [
   {
