@@ -64,7 +64,7 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
         <div>
           {/* Logo Brand */}
           <div className="h-16 px-6 flex items-center gap-3 border-b border-slate-100">
-            <div className="w-8 h-8 bg-[#0F172A] rounded-xl flex items-center justify-center text-white">
+            <div className="w-8 h-8 bg-[#030213] rounded-xl flex items-center justify-center text-white">
               <Package className="w-4 h-4" />
             </div>
             <span className="font-bold text-sm tracking-wide text-[#0F172A]">B2B Platform</span>
@@ -77,7 +77,7 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
               onClick={() => setActiveView && setActiveView('dashboard')}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${
                 activeView === 'dashboard'
-                  ? 'bg-[#0F172A] text-white shadow-sm'
+                  ? 'bg-[#030213] text-white shadow-sm'
                   : 'text-slate-600 hover:bg-slate-50'
               }`}
             >
@@ -90,7 +90,7 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
               onClick={() => setActiveView && setActiveView('products')}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${
                 activeView === 'products'
-                  ? 'bg-[#0F172A] text-white shadow-sm'
+                  ? 'bg-[#030213] text-white shadow-sm'
                   : 'text-slate-600 hover:bg-slate-50'
               }`}
             >
@@ -103,7 +103,7 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
               onClick={() => setActiveView && setActiveView('orders')}
               className={`w-full flex items-center justify-between px-4 py-3 rounded-xl transition-colors ${
                 activeView === 'orders'
-                  ? 'bg-[#0F172A] text-white shadow-sm'
+                  ? 'bg-[#030213] text-white shadow-sm'
                   : 'text-slate-600 hover:bg-slate-50'
               }`}
             >
@@ -111,7 +111,7 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
                 <ShoppingCart className="w-4 h-4" />
                 <span>Orders</span>
               </div>
-              <span className="bg-red-500 text-white text-[10px] font-semibold px-2 py-0.5 rounded-full">
+              <span className="bg-[#D4183D] text-white text-[10px] font-semibold px-2 py-0.5 rounded-full">
                 3
               </span>
             </button>
@@ -121,7 +121,7 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
               onClick={() => setActiveView && setActiveView('shipping')}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${
                 activeView === 'shipping'
-                  ? 'bg-[#0F172A] text-white shadow-sm'
+                  ? 'bg-[#030213] text-white shadow-sm'
                   : 'text-slate-600 hover:bg-slate-50'
               }`}
             >
@@ -134,7 +134,7 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
               onClick={() => setActiveView && setActiveView('messages')}
               className={`w-full flex items-center justify-between px-4 py-3 rounded-xl transition-colors ${
                 activeView === 'messages'
-                  ? 'bg-[#0F172A] text-white shadow-sm'
+                  ? 'bg-[#030213] text-white shadow-sm'
                   : 'text-slate-600 hover:bg-slate-50'
               }`}
             >
@@ -142,7 +142,7 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
                 <MessageSquare className="w-4 h-4" />
                 <span>Messages</span>
               </div>
-              <span className="bg-red-500 text-white text-[10px] font-semibold px-2 py-0.5 rounded-full">
+              <span className="bg-[#D4183D] text-white text-[10px] font-semibold px-2 py-0.5 rounded-full">
                 5
               </span>
             </button>
@@ -152,7 +152,7 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
               onClick={() => setActiveView && setActiveView('admin')}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${
                 activeView === 'admin'
-                  ? 'bg-[#0F172A] text-white shadow-sm'
+                  ? 'bg-[#030213] text-white shadow-sm'
                   : 'text-slate-600 hover:bg-slate-50'
               }`}
             >
@@ -239,10 +239,10 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
         </div>
 
         {/* Charts Row using Recharts */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           
-          {/* Sales Overview Card */}
-          <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col justify-between">
+          {/* Sales Overview Card (Takes 2 columns to match the design proportions) */}
+          <div className="lg:col-span-2 bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col justify-between">
             <div className="mb-4">
               <h3 className="text-base font-medium text-[#0F172A]">Sales Overview</h3>
               <p className="text-sm text-slate-500 mt-0.5">Monthly sales and order trends</p>
@@ -253,8 +253,8 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
                 <AreaChart data={salesData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                   <defs>
                     <linearGradient id="salesGradient" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#CBD5E1" stopOpacity={0.9}/>
-                      <stop offset="95%" stopColor="#CBD5E1" stopOpacity={0.3}/>
+                      <stop offset="5%" stopColor="#030213" stopOpacity={0.3}/>
+                      <stop offset="95%" stopColor="#030213" stopOpacity={0.0}/>
                     </linearGradient>
                   </defs>
 
@@ -279,8 +279,8 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
                     id="salesOverviewArea"
                     type="monotone" 
                     dataKey="sales" 
-                    stroke="#0F172A" 
-                    strokeWidth={1.5} 
+                    stroke="#030213" 
+                    strokeWidth={2.5} 
                     fillOpacity={1} 
                     fill="url(#salesGradient)" 
                   />
@@ -296,15 +296,15 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
               <p className="text-xs text-slate-400 mt-0.5">Distribution by category</p>
             </div>
 
-            <div className="w-full h-[260px] flex items-center justify-center">
+            <div className="w-full h-[210px] flex items-center justify-center">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie
                     data={[
-                      { name: 'Electronics 40%', value: 40, color: '#0080FF' },
-                      { name: 'Clothing 30%', value: 30, color: '#00C48C' },
-                      { name: 'Food 20%', value: 20, color: '#FFB020' },
-                      { name: 'Other 10%', value: 10, color: '#FF7043' },
+                      { name: 'Electronics 40%', value: 40, color: '#0066FF' },
+                      { name: 'Clothing 30%', value: 30, color: '#00C853' },
+                      { name: 'Food 20%', value: 20, color: '#FF9800' },
+                      { name: 'Other 10%', value: 10, color: '#FF5722' },
                     ]}
                     cx="50%"
                     cy="50%"
@@ -315,39 +315,47 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
                     endAngle={-270}
                     stroke="#ffffff"
                     strokeWidth={1.5}
-                    label={({ cx, cy, midAngle, outerRadius, name, color }) => {
-                      const RADIAN = Math.PI / 180;
-                      const radius = outerRadius + 22;
-                      const x = cx + radius * Math.cos(-midAngle * RADIAN);
-                      const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-                      return (
-                        <text
-                          x={x}
-                          y={y}
-                          fill={color}
-                          textAnchor={x > cx ? 'start' : 'end'}
-                          dominantBaseline="central"
-                          fontSize={12}
-                          fontWeight={500}
-                        >
-                          {name}
-                        </text>
-                      );
-                    }}
                     labelLine={false}
                   >
                     {[
-                      { name: 'Electronics 40%', value: 40, color: '#0080FF' },
-                      { name: 'Clothing 30%', value: 30, color: '#00C48C' },
-                      { name: 'Food 20%', value: 20, color: '#FFB020' },
-                      { name: 'Other 10%', value: 10, color: '#FF7043' },
+                      { name: 'Electronics 40%', value: 40, color: '#0066FF' },
+                      { name: 'Clothing 30%', value: 30, color: '#00C853' },
+                      { name: 'Food 20%', value: 20, color: '#FF9800' },
+                      { name: 'Other 10%', value: 10, color: '#FF5722' },
                     ].map((entry, index) => (
                       <Cell key={`cell-${index}`} fill={entry.color} />
                     ))}
                   </Pie>
                 </PieChart>
               </ResponsiveContainer>
+            </div>
+
+            {/* Legend section to completely mirror the visual layout */}
+            <div className="flex flex-col gap-2 text-xs font-[Arial] pt-2 border-t border-slate-100">
+              <div className="flex justify-between items-center">
+                <span className="flex items-center gap-1.5 text-[#0066FF] font-medium">
+                  <span className="w-2 h-2 rounded-full bg-[#0066FF]"></span> Electronics
+                </span>
+                <span className="text-[#0A0A0A] font-bold">40%</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="flex items-center gap-1.5 text-[#00C853] font-medium">
+                  <span className="w-2 h-2 rounded-full bg-[#00C853]"></span> Clothing
+                </span>
+                <span className="text-[#0A0A0A] font-bold">30%</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="flex items-center gap-1.5 text-[#FF9800] font-medium">
+                  <span className="w-2 h-2 rounded-full bg-[#FF9800]"></span> Food
+                </span>
+                <span className="text-[#0A0A0A] font-bold">20%</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="flex items-center gap-1.5 text-[#FF5722] font-medium">
+                  <span className="w-2 h-2 rounded-full bg-[#FF5722]"></span> Other
+                </span>
+                <span className="text-[#0A0A0A] font-bold">10%</span>
+              </div>
             </div>
           </div>
 
@@ -392,7 +400,7 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
             onClick={() => setActiveView && setActiveView('products')}
             className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-left hover:border-slate-300 transition-all cursor-pointer group"
           >
-            <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center mb-3 text-[#0F172A] group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
+            <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center mb-3 text-[#0F172A] group-hover:bg-[#030213] group-hover:text-white transition-colors">
               <Package className="w-5 h-5" />
             </div>
             <h4 className="text-xs font-bold text-[#0F172A] mb-1">Add Product</h4>
@@ -403,7 +411,7 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
             type="button"
             className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-left hover:border-slate-300 transition-all cursor-pointer group"
           >
-            <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center mb-3 text-[#0F172A] group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
+            <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center mb-3 text-[#0F172A] group-hover:bg-[#030213] group-hover:text-white transition-colors">
               <TrendingUp className="w-5 h-5" />
             </div>
             <h4 className="text-xs font-bold text-[#0F172A] mb-1">View Analytics</h4>
@@ -414,7 +422,7 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
             type="button"
             className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-left hover:border-slate-300 transition-all cursor-pointer group"
           >
-            <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center mb-3 text-[#0F172A] group-hover:bg-[#0F172A] group-hover:text-white transition-colors">
+            <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center mb-3 text-[#0F172A] group-hover:bg-[#030213] group-hover:text-white transition-colors">
               <Users2 className="w-5 h-5" />
             </div>
             <h4 className="text-xs font-bold text-[#0F172A] mb-1">Manage Retailers</h4>

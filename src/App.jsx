@@ -8,13 +8,12 @@ import Step5Verification from './components/Step5Verification';
 import Step6Review from './components/Step6Review';
 import Dashboard from './components/Dashboard';
 import ProductCatalog from './components/ProductCatalog';
+import Orders from './components/Orders';
 
 export default function App() {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
-  
-  // Tracks active dashboard view ('dashboard' | 'products' | 'orders' | etc.)
   const [activeView, setActiveView] = useState('dashboard'); 
 
   const handleNext = () => setCurrentStep((prev) => Math.min(prev + 1, 6));
@@ -28,7 +27,7 @@ export default function App() {
     setIsSubmitted(true);
   };
 
-  // Render view router after registration is complete
+  
   if (isSubmitted) {
     switch (activeView) {
       case 'products':
@@ -39,6 +38,16 @@ export default function App() {
             setActiveView={setActiveView} 
           />
         );
+      
+      case 'orders':
+        return (
+          <Orders 
+            formData={formData} 
+            activeView={activeView} 
+            setActiveView={setActiveView} 
+          />
+        );
+
       case 'dashboard':
       default:
         return (
@@ -51,7 +60,7 @@ export default function App() {
     }
   }
 
-  // Registration Flow
+  
   return (
     <RegistrationLayout currentStep={currentStep} totalSteps={6}>
       {currentStep === 1 && (
@@ -61,7 +70,6 @@ export default function App() {
           onNext={handleNext}
         />
       )}
-
       {currentStep === 2 && (
         <Step2ContactPerson
           formData={formData}
@@ -70,7 +78,6 @@ export default function App() {
           onBack={handleBack}
         />
       )}
-
       {currentStep === 3 && (
         <Step3BusinessLicense
           formData={formData}
@@ -79,7 +86,6 @@ export default function App() {
           onBack={handleBack}
         />
       )}
-
       {currentStep === 4 && (
         <Step4AddressWarehouse
           formData={formData}
@@ -88,7 +94,6 @@ export default function App() {
           onBack={handleBack}
         />
       )}
-
       {currentStep === 5 && (
         <Step5Verification
           formData={formData}
@@ -96,7 +101,6 @@ export default function App() {
           onBack={handleBack}
         />
       )}
-
       {currentStep === 6 && (
         <Step6Review
           formData={formData}

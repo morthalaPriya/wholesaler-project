@@ -7,7 +7,6 @@ export default function RegistrationLayout({ currentStep, totalSteps = 6, childr
   return (
     <div className="min-h-screen bg-[#F4F5F8] font-sans flex flex-col items-center justify-start antialiased pb-16">
       
-      {/* Top Banner Header */}
       <div 
         className="w-full pt-8 pb-10 px-6 md:px-12 text-white flex flex-col justify-between"
         style={{ background: 'linear-gradient(90deg, #2563EB 0%, #7C3AED 50%, #A855F7 100%)' }}
@@ -42,7 +41,6 @@ export default function RegistrationLayout({ currentStep, totalSteps = 6, childr
         </div>
       </div>
 
-      {/* Main Card Container (Positioned completely below the header banner) */}
       <div className="w-full max-w-[760px] px-4 my-8">
         <div className="w-full bg-white rounded-2xl p-8 md:p-10 shadow-[0_10px_30px_rgba(0,0,0,0.04)] border border-slate-100/80">
           {children}

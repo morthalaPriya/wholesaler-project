@@ -9,14 +9,12 @@ export default function Step6Review({ formData = {}, onEditStep, onCancel, onSub
 
   return (
     <div className="space-y-5">
-      {/* Step Header */}
       <div>
         <h2 className="text-base font-semibold text-[#0F172A]">Review & Submit</h2>
         <p className="text-xs text-[#94A3B8] mt-0.5">Review your information before submitting</p>
       </div>
 
       <div className="space-y-4">
-        {/* 1. Company Details */}
         <div className="border border-[#E2E8F0] rounded-xl p-4 bg-white relative">
           <div className="flex justify-between items-center mb-3">
             <h3 className="text-xs font-semibold text-[#0F172A]">Company Details</h3>
@@ -48,7 +46,6 @@ export default function Step6Review({ formData = {}, onEditStep, onCancel, onSub
           </div>
         </div>
 
-        {/* 2. Owner/Contact Person */}
         <div className="border border-[#E2E8F0] rounded-xl p-4 bg-white relative">
           <div className="flex justify-between items-center mb-3">
             <h3 className="text-xs font-semibold text-[#0F172A]">Owner/Contact Person</h3>
@@ -80,7 +77,6 @@ export default function Step6Review({ formData = {}, onEditStep, onCancel, onSub
           </div>
         </div>
 
-        {/* 3. Business License */}
         <div className="border border-[#E2E8F0] rounded-xl p-4 bg-white relative">
           <div className="flex justify-between items-center mb-3">
             <h3 className="text-xs font-semibold text-[#0F172A]">Business License</h3>
@@ -101,7 +97,6 @@ export default function Step6Review({ formData = {}, onEditStep, onCancel, onSub
           </div>
         </div>
 
-        {/* 4. Address Details */}
         <div className="border border-[#E2E8F0] rounded-xl p-4 bg-white relative">
           <div className="flex justify-between items-center mb-2">
             <h3 className="text-xs font-semibold text-[#0F172A]">Address Details</h3>
@@ -122,7 +117,6 @@ export default function Step6Review({ formData = {}, onEditStep, onCancel, onSub
           </div>
         </div>
 
-        {/* 5. Verification Status */}
         <div className="border border-[#E2E8F0] rounded-xl p-4 bg-white">
           <h3 className="text-xs font-semibold text-[#0F172A] mb-2.5">Verification Status</h3>
           <div className="space-y-2 text-xs font-medium text-[#1E293B]">
@@ -137,7 +131,6 @@ export default function Step6Review({ formData = {}, onEditStep, onCancel, onSub
           </div>
         </div>
 
-        {/* Agreement Checkboxes */}
         <div className="border border-[#E2E8F0] rounded-xl p-4 bg-white space-y-2.5 text-xs text-[#334155]">
           <label className="flex items-center gap-2.5 cursor-pointer">
             <input
@@ -163,7 +156,6 @@ export default function Step6Review({ formData = {}, onEditStep, onCancel, onSub
         </div>
       </div>
 
-      {/* Footer Actions */}
       <div className="flex justify-between items-center pt-4">
         <button
           type="button"

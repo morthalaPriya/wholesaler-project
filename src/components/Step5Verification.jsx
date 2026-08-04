@@ -2,19 +2,15 @@ import React, { useState, useRef, useEffect } from 'react';
 import { ArrowRight, ArrowLeft, CheckCircle2 } from 'lucide-react';
 
 export default function Step5Verification({ formData, onNext, onBack }) {
-  // Verification states
-  const [emailState, setEmailState] = useState('initial'); // 'initial' | 'otp_sent' | 'verified'
-  const [mobileState, setMobileState] = useState('initial'); // 'initial' | 'otp_sent' | 'verified'
+  const [emailState, setEmailState] = useState('initial');
+  const [mobileState, setMobileState] = useState('initial');
 
-  // OTP Inputs state
   const [emailOtp, setEmailOtp] = useState(['', '', '', '', '', '']);
   const [mobileOtp, setMobileOtp] = useState(['', '', '', '', '', '']);
 
-  // Timer countdown
   const [emailTimer, setEmailTimer] = useState(55);
   const [showToast, setShowToast] = useState(false);
 
-  // Input refs for auto-focus
   const emailOtpRefs = useRef([]);
 
   useEffect(() => {
@@ -50,7 +46,6 @@ export default function Step5Verification({ formData, onNext, onBack }) {
       newOtp[index] = value.slice(-1);
       setEmailOtp(newOtp);
 
-      // Auto-focus next input
       if (value && index < 5) {
         emailOtpRefs.current[index + 1]?.focus();
       }
@@ -72,7 +67,6 @@ export default function Step5Verification({ formData, onNext, onBack }) {
 
       <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); onNext(); }}>
         
-        {/* ================= EMAIL VERIFICATION ================= */}
         <div>
           <div className="flex justify-between items-center mb-1">
             <h3 className="text-xs font-semibold text-[#334155]">Email Verification</h3>
@@ -85,7 +79,6 @@ export default function Step5Verification({ formData, onNext, onBack }) {
             {formData?.emailAddress || formData?.companyEmail || 'admin@abc.com'}
           </p>
 
-          {/* INITIAL STATE: Send OTP Button */}
           {emailState === 'initial' && (
             <button
               type="button"
@@ -96,7 +89,6 @@ export default function Step5Verification({ formData, onNext, onBack }) {
             </button>
           )}
 
-          {/* OTP SENT STATE: Inputs + Resend Timer + Verify Button */}
           {emailState === 'otp_sent' && (
             <div className="space-y-4">
               <div className="w-full py-2.5 border border-[#E2E8F0] rounded-xl text-xs font-medium text-[#94A3B8] text-center bg-white">
@@ -131,7 +123,6 @@ export default function Step5Verification({ formData, onNext, onBack }) {
             </div>
           )}
 
-          {/* VERIFIED STATE: Green Alert Box */}
           {emailState === 'verified' && (
             <div className="w-full py-3 px-4 bg-[#F0FDF4] border border-[#DCFCE7] rounded-xl flex items-center gap-2.5 text-xs text-[#16A34A] font-medium">
               <CheckCircle2 className="w-4 h-4 shrink-0" />
@@ -140,7 +131,6 @@ export default function Step5Verification({ formData, onNext, onBack }) {
           )}
         </div>
 
-        {/* ================= MOBILE VERIFICATION ================= */}
         <div>
           <div className="flex justify-between items-center mb-1">
             <h3 className="text-xs font-semibold text-[#334155]">Mobile Verification</h3>
@@ -153,7 +143,6 @@ export default function Step5Verification({ formData, onNext, onBack }) {
             {formData?.phoneNumberStep2 || formData?.phoneNumber || '+91 9999999999'}
           </p>
 
-          {/* INITIAL STATE: Send OTP Button */}
           {mobileState !== 'verified' && (
             <button
               type="button"
@@ -164,7 +153,6 @@ export default function Step5Verification({ formData, onNext, onBack }) {
             </button>
           )}
 
-          {/* VERIFIED STATE: Green Alert Box */}
           {mobileState === 'verified' && (
             <div className="w-full py-3 px-4 bg-[#F0FDF4] border border-[#DCFCE7] rounded-xl flex items-center gap-2.5 text-xs text-[#16A34A] font-medium">
               <CheckCircle2 className="w-4 h-4 shrink-0" />
@@ -173,7 +161,6 @@ export default function Step5Verification({ formData, onNext, onBack }) {
           )}
         </div>
 
-        {/* Bottom Actions */}
         <div className="flex justify-between items-center pt-6">
           <button
             type="button"
@@ -194,7 +181,6 @@ export default function Step5Verification({ formData, onNext, onBack }) {
         </div>
       </form>
 
-      {/* Floating Bottom Right Toast Notification */}
       {showToast && (
         <div className="fixed bottom-6 right-6 bg-white border border-slate-200 shadow-xl rounded-2xl px-4 py-3 flex items-center gap-2.5 text-xs font-medium text-[#0F172A] z-50 animate-bounce">
           <CheckCircle2 className="w-4 h-4 text-black fill-black text-white" />
