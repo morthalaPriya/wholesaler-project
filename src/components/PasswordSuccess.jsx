@@ -26,15 +26,15 @@ export default function PasswordSuccess({ onBackToLogin }) {
 
           <div className="flex justify-between items-start pt-2 max-w-[230px]">
             <div className="flex flex-col items-center text-center">
-              <h3 className="text-2xl md:text-[20px] font-bold text-white tracking-tight">100%</h3>
+              <h3 className="text-2xl md:text-[23px] font-bold text-white tracking-tight">100%</h3>
               <p className="text-white/80 text-[11px] md:text-sm mt-1 font-normal leading-tight">Secure</p>
             </div>
             <div className="flex flex-col items-center text-center">
-              <h3 className="text-2xl md:text-[20px] font-bold text-white tracking-tight">2-Step</h3>
+              <h3 className="text-2xl md:text-[23px] font-bold text-white tracking-tight">2-Step</h3>
               <p className="text-white/80 text-[11px] md:text-xs mt-1 font-normal leading-tight">Verification</p>
             </div>
             <div className="flex flex-col items-center text-center">
-              <h3 className="text-2xl md:text-[20px] font-bold text-white tracking-tight">24/7</h3>
+              <h3 className="text-2xl md:text-[23px] font-bold text-white tracking-tight">24/7</h3>
               <p className="text-white/80 text-[11px] md:text-xs mt-1 font-normal leading-tight">Support</p>
             </div>
           </div>
