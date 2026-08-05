@@ -43,17 +43,17 @@ export default function NewPassword({ onResetSuccess, onBackToLogin, onBackToMet
   const RequirementCheck = ({ isMet, label }) => (
     <div className="flex items-center gap-2 text-[11px]">
       {isMet ? (
-        <div 
+        <div
           className="w-3.5 h-3.5 rounded-full border flex items-center justify-center shrink-0"
           style={{ borderColor: '#00A63E', color: '#00A63E' }}
         >
-          <svg 
-            className="w-2.5 h-2.5" 
-            viewBox="0 0 12 12" 
-            fill="none" 
-            stroke="currentColor" 
-            strokeWidth="2" 
-            strokeLinecap="round" 
+          <svg
+            className="w-2.5 h-2.5"
+            viewBox="0 0 12 12"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
             strokeLinejoin="round"
           >
             <polyline points="2.5 6 5 8.5 9.5 3.5" />
@@ -61,13 +61,13 @@ export default function NewPassword({ onResetSuccess, onBackToLogin, onBackToMet
         </div>
       ) : (
         <div className="w-3.5 h-3.5 rounded-full border border-slate-300 flex items-center justify-center shrink-0">
-          <svg 
-            className="w-2.5 h-2.5 text-slate-300" 
-            viewBox="0 0 12 12" 
-            fill="none" 
-            stroke="currentColor" 
-            strokeWidth="1.5" 
-            strokeLinecap="round" 
+          <svg
+            className="w-2.5 h-2.5 text-slate-300"
+            viewBox="0 0 12 12"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
             strokeLinejoin="round"
           >
             <polyline points="2.5 6 5 8.5 9.5 3.5" />
@@ -82,7 +82,7 @@ export default function NewPassword({ onResetSuccess, onBackToLogin, onBackToMet
 
   return (
     <div className="h-screen w-full flex flex-col md:flex-row font-sans bg-[#FAF9FF] overflow-hidden">
-      
+
       <div
         className="md:w-1/2 w-full p-10 md:p-16 text-white flex flex-col justify-center h-full relative overflow-hidden shrink-0"
         style={{
@@ -143,7 +143,7 @@ export default function NewPassword({ onResetSuccess, onBackToLogin, onBackToMet
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-3">
-            
+
             <div>
               <label className="block text-[11px] font-semibold text-slate-800 mb-1">
                 New Password
@@ -230,17 +230,17 @@ export default function NewPassword({ onResetSuccess, onBackToLogin, onBackToMet
           </form>
 
           <div className="flex items-start justify-center gap-5  mt-4">
-          <span className="text-xs text-slate-400 text-right leading-[1.28] block translate-y-[0px]">
-            Remember your <br /> <center>password?</center>
-          </span>
-          <button
-            type="button"
-            onClick={onBackToLogin}
-            className="font-semibold text-[13px] text-slate-900 hover:underline transition-all cursor-pointer"
-          >
-            Back to Login
-          </button>
-        </div>
+            <span className="text-xs text-slate-400 text-right leading-[1.28] block translate-y-[0px]">
+              Remember your <br /> <center>password?</center>
+            </span>
+            <button
+              type="button"
+              onClick={onBackToLogin}
+              className="font-semibold text-[13px] text-slate-900 hover:underline transition-all cursor-pointer"
+            >
+              Back to Login
+            </button>
+          </div>
 
         </div>
       </div>

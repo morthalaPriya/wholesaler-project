@@ -8,7 +8,7 @@ import EnterOtp from './EnterOtp';
 import CreateNewPassword from './NewPassword';
 import PasswordSuccess from './PasswordSuccess';
 
-function LoginFlow({ onLogin }) {
+function LoginFlow({ onLogin, onRegister }) {
     const [selectedType, setSelectedType] = useState(null);
     const [currentScreen, setCurrentScreen] = useState('selectType');
     const [selectedMethod, setSelectedMethod] = useState('email');
@@ -68,6 +68,7 @@ function LoginFlow({ onLogin }) {
                 <WholesalerLogin
                     onSelectType={(type) => setSelectedType(type)}
                     onLogin={onLogin}
+                    onRegister={onRegister}
                     onForgotPassword={() => setCurrentScreen('resetPassword')}
                 />
             ) : (

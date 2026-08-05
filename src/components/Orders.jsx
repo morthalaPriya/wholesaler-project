@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { 
-  Search, 
-  Eye, 
-  Download, 
-  LayoutDashboard, 
-  Package, 
-  ShoppingCart, 
-  Truck, 
-  MessageSquare, 
-  ShieldCheck, 
+import {
+  Search,
+  Eye,
+  Download,
+  LayoutDashboard,
+  Package,
+  ShoppingCart,
+  Truck,
+  MessageSquare,
+  ShieldCheck,
   ChevronDown,
   AlertTriangle
 } from 'lucide-react';
@@ -18,7 +18,7 @@ const Orders = ({ activeView, setActiveView }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [currency, setCurrency] = useState('INR ₹');
 
-  
+
   const [orders] = useState([
     {
       id: 'ORD-2025-001',
@@ -54,7 +54,7 @@ const Orders = ({ activeView, setActiveView }) => {
     },
   ]);
 
-  
+
   const lowStockItems = [
     {
       id: 1,
@@ -79,7 +79,7 @@ const Orders = ({ activeView, setActiveView }) => {
     },
   ];
 
-  
+
   const inventoryOverviewData = [
     {
       id: 1,
@@ -123,14 +123,14 @@ const Orders = ({ activeView, setActiveView }) => {
     },
   ];
 
-  
+
   const filteredOrders = orders.filter(
     (order) =>
       order.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
       order.customer.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  
+
   const getStatusBadge = (status) => {
     switch (status) {
       case 'delivered':
@@ -148,106 +148,7 @@ const Orders = ({ activeView, setActiveView }) => {
 
   return (
     <div className="flex h-screen bg-gray-50 font-sans">
-      
-      <aside className="w-64 bg-white border-r border-gray-200 flex flex-col justify-between">
-        <div>
-          
-          <div className="flex items-center gap-3 px-6 py-5 border-b border-gray-100">
-            <div className="bg-black text-white p-2 rounded-lg">
-              <Package size={20} />
-            </div>
-            <span className="font-bold text-gray-900 text-lg">B2B Platform</span>
-          </div>
-
-          
-          <nav className="p-4 space-y-1">
-            <button
-              onClick={() => setActiveView && setActiveView('dashboard')}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                activeView === 'dashboard'
-                  ? 'bg-black text-white'
-                  : 'text-gray-600 hover:bg-gray-100'
-              }`}
-            >
-              <LayoutDashboard size={18} />
-              Dashboard
-            </button>
-
-            <button
-              onClick={() => setActiveView && setActiveView('products')}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                activeView === 'products'
-                  ? 'bg-black text-white'
-                  : 'text-gray-600 hover:bg-gray-100'
-              }`}
-            >
-              <Package size={18} />
-              Products
-            </button>
-
-            <button
-              onClick={() => setActiveView && setActiveView('orders')}
-              className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                activeView === 'orders' || !activeView
-                  ? 'bg-black text-white'
-                  : 'text-gray-600 hover:bg-gray-100'
-              }`}
-            >
-              <div className="flex items-center gap-3">
-                <ShoppingCart size={18} />
-                Orders
-              </div>
-              <span className="bg-rose-500 text-white text-xs px-2 py-0.5 rounded-full font-bold">
-                3
-              </span>
-            </button>
-
-            <button
-              onClick={() => setActiveView && setActiveView('shipping')}
-              className="w-full flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg text-sm font-medium"
-            >
-              <Truck size={18} />
-              Shipping
-            </button>
-
-            <button
-              onClick={() => setActiveView && setActiveView('messages')}
-              className="w-full flex items-center justify-between px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg text-sm font-medium"
-            >
-              <div className="flex items-center gap-3">
-                <MessageSquare size={18} />
-                Messages
-              </div>
-              <span className="bg-rose-500 text-white text-xs px-2 py-0.5 rounded-full font-bold">
-                5
-              </span>
-            </button>
-
-            <button
-              onClick={() => setActiveView && setActiveView('admin')}
-              className="w-full flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg text-sm font-medium"
-            >
-              <ShieldCheck size={18} />
-              Admin
-            </button>
-          </nav>
-        </div>
-
-        
-        <div className="p-4 border-t border-gray-100 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center font-bold text-gray-700">
-            A
-          </div>
-          <div>
-            <p className="text-sm font-semibold text-gray-900">Company Name</p>
-            <p className="text-xs text-gray-500">abc@abc.in</p>
-          </div>
-        </div>
-      </aside>
-
-      
       <main className="flex-1 overflow-y-auto p-8">
-        
         <div className="flex items-start justify-between mb-6">
           <div>
             <h1 className="text-2xl font-bold text-gray-900">Order Management</h1>
@@ -255,8 +156,6 @@ const Orders = ({ activeView, setActiveView }) => {
               Track and manage your orders and inventory
             </p>
           </div>
-
-          
           <div className="flex items-center gap-2">
             <span className="text-xs font-medium text-gray-500">Currency:</span>
             <div className="relative">
@@ -276,58 +175,46 @@ const Orders = ({ activeView, setActiveView }) => {
             </div>
           </div>
         </div>
-
-        
         <div className="inline-flex bg-gray-200/80 p-1 rounded-xl mb-8 w-80">
           <button
             onClick={() => setActiveTab('orders')}
-            className={`flex-1 py-1.5 text-xs font-semibold rounded-lg transition-all ${
-              activeTab === 'orders'
+            className={`flex-1 py-1.5 text-xs font-semibold rounded-lg transition-all ${activeTab === 'orders'
                 ? 'bg-white text-gray-900 shadow-sm'
                 : 'text-gray-600 hover:text-gray-900'
-            }`}
+              }`}
           >
             Orders
           </button>
           <button
             onClick={() => setActiveTab('inventory')}
-            className={`flex-1 py-1.5 text-xs font-semibold rounded-lg transition-all ${
-              activeTab === 'inventory'
+            className={`flex-1 py-1.5 text-xs font-semibold rounded-lg transition-all ${activeTab === 'inventory'
                 ? 'bg-white text-gray-900 shadow-sm'
                 : 'text-gray-600 hover:text-gray-900'
-            }`}
+              }`}
           >
             Inventory
           </button>
         </div>
-
-        
         {activeTab === 'orders' && (
           <div>
-            
             <div className="grid grid-cols-4 gap-4 mb-8">
               <div className="bg-white p-5 rounded-2xl border border-gray-200">
                 <p className="text-xs font-semibold text-gray-600 mb-4">Total Orders</p>
                 <p className="text-2xl font-bold text-gray-900">4</p>
               </div>
-
               <div className="bg-white p-5 rounded-2xl border border-gray-200">
                 <p className="text-xs font-semibold text-gray-600 mb-4">Pending</p>
                 <p className="text-2xl font-bold text-orange-500">1</p>
               </div>
-
               <div className="bg-white p-5 rounded-2xl border border-gray-200">
                 <p className="text-xs font-semibold text-gray-600 mb-4">In Progress</p>
                 <p className="text-2xl font-bold text-blue-600">2</p>
               </div>
-
               <div className="bg-white p-5 rounded-2xl border border-gray-200">
                 <p className="text-xs font-semibold text-gray-600 mb-4">Total Revenue</p>
                 <p className="text-2xl font-bold text-gray-900">₹870000.00</p>
               </div>
             </div>
-
-            
             <div className="bg-white p-4 rounded-2xl border border-gray-200 mb-8">
               <div className="relative">
                 <Search
@@ -343,8 +230,6 @@ const Orders = ({ activeView, setActiveView }) => {
                 />
               </div>
             </div>
-
-            
             <div className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="mb-6">
                 <h2 className="text-base font-bold text-gray-900">Recent Orders</h2>
@@ -352,7 +237,6 @@ const Orders = ({ activeView, setActiveView }) => {
                   Manage and track all your orders
                 </p>
               </div>
-
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse">
                   <thead>
@@ -403,10 +287,10 @@ const Orders = ({ activeView, setActiveView }) => {
           </div>
         )}
 
-        
+
         {activeTab === 'inventory' && (
           <div>
-            
+
             <div className="grid grid-cols-3 gap-6 mb-8">
               <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
                 <p className="text-sm font-medium text-gray-600 mb-6">Total Products</p>
@@ -427,7 +311,7 @@ const Orders = ({ activeView, setActiveView }) => {
               </div>
             </div>
 
-            
+
             <div className="bg-white rounded-2xl border border-orange-200 p-6 shadow-sm mb-8">
               <div className="flex items-center gap-2 mb-1">
                 <AlertTriangle className="text-orange-500" size={20} />
@@ -466,7 +350,7 @@ const Orders = ({ activeView, setActiveView }) => {
               </div>
             </div>
 
-            
+
             <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
               <div className="mb-6">
                 <h2 className="text-base font-bold text-gray-900">Inventory Overview</h2>
@@ -500,20 +384,18 @@ const Orders = ({ activeView, setActiveView }) => {
                           <td className="py-4 text-gray-600">{item.sku}</td>
                           <td className="py-4 text-gray-600">{item.category}</td>
                           <td
-                            className={`py-4 font-bold ${
-                              isLowStock ? 'text-orange-500' : 'text-gray-900'
-                            }`}
+                            className={`py-4 font-bold ${isLowStock ? 'text-orange-500' : 'text-gray-900'
+                              }`}
                           >
                             {item.stock}
                           </td>
                           <td className="py-4 text-gray-600">{item.reorderPoint}</td>
                           <td className="py-4">
                             <span
-                              className={`inline-block px-2.5 py-1 rounded-md text-[11px] font-semibold ${
-                                isLowStock
+                              className={`inline-block px-2.5 py-1 rounded-md text-[11px] font-semibold ${isLowStock
                                   ? 'bg-amber-100/70 text-amber-700'
                                   : 'bg-emerald-100/70 text-emerald-700'
-                              }`}
+                                }`}
                             >
                               {item.status}
                             </span>

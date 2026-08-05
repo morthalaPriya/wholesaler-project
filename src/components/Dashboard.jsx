@@ -1,26 +1,26 @@
 import React from 'react';
-import { 
-  AreaChart, 
-  Area, 
-  XAxis, 
-  YAxis, 
-  CartesianGrid, 
+import {
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
   ResponsiveContainer,
   PieChart,
   Pie,
   Cell
 } from 'recharts';
-import { 
-  LayoutDashboard, 
-  Package, 
-  ShoppingCart, 
-  Truck, 
-  MessageSquare, 
-  Shield, 
-  TrendingUp, 
-  TrendingDown, 
-  DollarSign, 
-  ShoppingBag, 
+import {
+  LayoutDashboard,
+  Package,
+  ShoppingCart,
+  Truck,
+  MessageSquare,
+  Shield,
+  TrendingUp,
+  TrendingDown,
+  DollarSign,
+  ShoppingBag,
   Users,
   Users2
 } from 'lucide-react';
@@ -58,136 +58,11 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
 
   return (
     <div className="min-h-screen bg-[#F8FAFC] flex font-sans antialiased text-[#0F172A] w-full">
-      
-      
-      <aside className="w-64 bg-white border-r border-slate-200 flex flex-col justify-between shrink-0">
-        <div>
-          
-          <div className="h-16 px-6 flex items-center gap-3 border-b border-slate-100">
-            <div className="w-8 h-8 bg-[#030213] rounded-xl flex items-center justify-center text-white">
-              <Package className="w-4 h-4" />
-            </div>
-            <span className="font-bold text-sm tracking-wide text-[#0F172A]">B2B Platform</span>
-          </div>
-
-        
-          <nav className="p-4 space-y-1 text-xs font-medium">
-            <button
-              type="button"
-              onClick={() => setActiveView && setActiveView('dashboard')}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${
-                activeView === 'dashboard'
-                  ? 'bg-[#030213] text-white shadow-sm'
-                  : 'text-slate-600 hover:bg-slate-50'
-              }`}
-            >
-              <LayoutDashboard className="w-4 h-4" />
-              <span>Dashboard</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setActiveView && setActiveView('products')}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${
-                activeView === 'products'
-                  ? 'bg-[#030213] text-white shadow-sm'
-                  : 'text-slate-600 hover:bg-slate-50'
-              }`}
-            >
-              <Package className="w-4 h-4" />
-              <span>Products</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setActiveView && setActiveView('orders')}
-              className={`w-full flex items-center justify-between px-4 py-3 rounded-xl transition-colors ${
-                activeView === 'orders'
-                  ? 'bg-[#030213] text-white shadow-sm'
-                  : 'text-slate-600 hover:bg-slate-50'
-              }`}
-            >
-              <div className="flex items-center gap-3">
-                <ShoppingCart className="w-4 h-4" />
-                <span>Orders</span>
-              </div>
-              <span className="bg-[#D4183D] text-white text-[10px] font-semibold px-2 py-0.5 rounded-full">
-                3
-              </span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setActiveView && setActiveView('shipping')}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${
-                activeView === 'shipping'
-                  ? 'bg-[#030213] text-white shadow-sm'
-                  : 'text-slate-600 hover:bg-slate-50'
-              }`}
-            >
-              <Truck className="w-4 h-4" />
-              <span>Shipping</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setActiveView && setActiveView('messages')}
-              className={`w-full flex items-center justify-between px-4 py-3 rounded-xl transition-colors ${
-                activeView === 'messages'
-                  ? 'bg-[#030213] text-white shadow-sm'
-                  : 'text-slate-600 hover:bg-slate-50'
-              }`}
-            >
-              <div className="flex items-center gap-3">
-                <MessageSquare className="w-4 h-4" />
-                <span>Messages</span>
-              </div>
-              <span className="bg-[#D4183D] text-white text-[10px] font-semibold px-2 py-0.5 rounded-full">
-                5
-              </span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setActiveView && setActiveView('admin')}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${
-                activeView === 'admin'
-                  ? 'bg-[#030213] text-white shadow-sm'
-                  : 'text-slate-600 hover:bg-slate-50'
-              }`}
-            >
-              <Shield className="w-4 h-4" />
-              <span>Admin</span>
-            </button>
-          </nav>
-        </div>
-
-        
-        <div className="p-4 border-t border-slate-100 flex items-center gap-3">
-          <div className="w-9 h-9 rounded-full bg-slate-200 flex items-center justify-center font-bold text-xs text-slate-700">
-            {formData?.companyName ? formData.companyName.charAt(0).toUpperCase() : 'A'}
-          </div>
-          <div className="overflow-hidden">
-            <h4 className="text-xs font-semibold text-[#0F172A] truncate">
-              {formData?.companyName || 'Company Name'}
-            </h4>
-            <p className="text-[11px] text-slate-400 truncate">
-              {formData?.companyEmail || 'abc@abc.in'}
-            </p>
-          </div>
-        </div>
-      </aside>
-
-      
       <main className="flex-1 p-8 overflow-y-auto space-y-6">
-        
-        
         <div>
           <h1 className="text-xl font-bold text-[#0F172A]">Dashboard</h1>
           <p className="text-xs text-slate-400 mt-0.5">Welcome back, here's your business summary</p>
         </div>
-
-        
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm">
             <div className="flex justify-between items-center mb-3">
@@ -238,10 +113,8 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
           </div>
         </div>
 
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          
-          
           <div className="lg:col-span-2 bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col justify-between">
             <div className="mb-4">
               <h3 className="text-base font-medium text-[#0F172A]">Sales Overview</h3>
@@ -253,49 +126,46 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
                 <AreaChart data={salesData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                   <defs>
                     <linearGradient id="salesGradient" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#030213" stopOpacity={0.3}/>
-                      <stop offset="95%" stopColor="#030213" stopOpacity={0.0}/>
+                      <stop offset="5%" stopColor="#030213" stopOpacity={0.3} />
+                      <stop offset="95%" stopColor="#030213" stopOpacity={0.0} />
                     </linearGradient>
                   </defs>
 
                   <CartesianGrid strokeDasharray="2 2" vertical={true} stroke="#E2E8F0" />
-                  
-                  <XAxis 
-                    dataKey="name" 
-                    axisLine={{ stroke: '#64748B' }} 
-                    tickLine={{ stroke: '#64748B' }} 
-                    tick={{ fontSize: 11, fill: '#64748B' }} 
-                  />
-                  
-                  <YAxis 
-                    domain={[0, 6000]} 
-                    ticks={[0, 1500, 3000, 4500, 6000]} 
-                    axisLine={{ stroke: '#64748B' }} 
-                    tickLine={{ stroke: '#64748B' }} 
-                    tick={{ fontSize: 11, fill: '#64748B' }} 
+
+                  <XAxis
+                    dataKey="name"
+                    axisLine={{ stroke: '#64748B' }}
+                    tickLine={{ stroke: '#64748B' }}
+                    tick={{ fontSize: 11, fill: '#64748B' }}
                   />
 
-                  <Area 
+                  <YAxis
+                    domain={[0, 6000]}
+                    ticks={[0, 1500, 3000, 4500, 6000]}
+                    axisLine={{ stroke: '#64748B' }}
+                    tickLine={{ stroke: '#64748B' }}
+                    tick={{ fontSize: 11, fill: '#64748B' }}
+                  />
+
+                  <Area
                     id="salesOverviewArea"
-                    type="monotone" 
-                    dataKey="sales" 
-                    stroke="#030213" 
-                    strokeWidth={2.5} 
-                    fillOpacity={1} 
-                    fill="url(#salesGradient)" 
+                    type="monotone"
+                    dataKey="sales"
+                    stroke="#030213"
+                    strokeWidth={2.5}
+                    fillOpacity={1}
+                    fill="url(#salesGradient)"
                   />
                 </AreaChart>
               </ResponsiveContainer>
             </div>
           </div>
-
-          
           <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between">
             <div>
               <h3 className="text-sm font-semibold text-[#0F172A]">Product Categories</h3>
               <p className="text-xs text-slate-400 mt-0.5">Distribution by category</p>
             </div>
-
             <div className="w-full h-[210px] flex items-center justify-center">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
@@ -329,8 +199,6 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
                 </PieChart>
               </ResponsiveContainer>
             </div>
-
-            
             <div className="flex flex-col gap-2 text-xs font-[Arial] pt-2 border-t border-slate-100">
               <div className="flex justify-between items-center">
                 <span className="flex items-center gap-1.5 text-[#0066FF] font-medium">
@@ -358,20 +226,16 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
               </div>
             </div>
           </div>
-
         </div>
-
-        
         <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
           <div className="mb-5">
             <h3 className="text-sm font-semibold text-[#0F172A]">Recent Orders</h3>
             <p className="text-xs text-slate-400">Your latest transactions and order status</p>
           </div>
-
           <div className="space-y-3">
             {recentOrders.map((order, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="flex items-center justify-between p-4 border border-slate-100 rounded-xl hover:shadow-sm transition-shadow bg-white"
               >
                 <div className="space-y-1">
@@ -392,10 +256,8 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
             ))}
           </div>
         </div>
-
-        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <button 
+          <button
             type="button"
             onClick={() => setActiveView && setActiveView('products')}
             className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-left hover:border-slate-300 transition-all cursor-pointer group"
@@ -406,8 +268,7 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
             <h4 className="text-xs font-bold text-[#0F172A] mb-1">Add Product</h4>
             <p className="text-[11px] text-slate-400 leading-snug">List a new product in your catalog</p>
           </button>
-
-          <button 
+          <button
             type="button"
             className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-left hover:border-slate-300 transition-all cursor-pointer group"
           >
@@ -417,8 +278,7 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
             <h4 className="text-xs font-bold text-[#0F172A] mb-1">View Analytics</h4>
             <p className="text-[11px] text-slate-400 leading-snug">Detailed insights and reports</p>
           </button>
-
-          <button 
+          <button
             type="button"
             className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-left hover:border-slate-300 transition-all cursor-pointer group"
           >
@@ -429,7 +289,6 @@ export default function Dashboard({ formData, activeView = 'dashboard', setActiv
             <p className="text-[11px] text-slate-400 leading-snug">Connect with your partners</p>
           </button>
         </div>
-
       </main>
     </div>
   );

@@ -8,7 +8,7 @@ import emailIcon from '../assets/Icon(6).svg';
 import lockIcon from '../assets/Icon(5).svg';
 import logoIcon from '../assets/Icon(7).svg';
 
-export default function WholesalerLogin({ onLogin, onForgotPassword }) {
+export default function WholesalerLogin({ onLogin, onForgotPassword, onRegister }) {
 
   const [loginMethod, setLoginMethod] = useState('password');
   const [email, setEmail] = useState('');
@@ -234,9 +234,13 @@ export default function WholesalerLogin({ onLogin, onForgotPassword }) {
           </div>
           <div className="text-center text-[13px] text-slate-500">
             New to the platform?{' '}
-            <a href="#register" className="font-medium text-[15px] text-slate-900 hover:underline">
+            <button
+              type="button"
+              onClick={onRegister}
+              className="font-medium text-[15px] text-slate-900 hover:underline cursor-pointer"
+            >
               Register as Wholesaler
-            </a>
+            </button>
           </div>
 
         </div>
