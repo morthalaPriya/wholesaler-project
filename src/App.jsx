@@ -53,7 +53,4 @@ function App() {
 }
 
 export default App;
-<<<<<<< HEAD
-=======
 
->>>>>>> third
