@@ -1,0 +1,436 @@
+import React from 'react';
+import { 
+  AreaChart, 
+  Area, 
+  XAxis, 
+  YAxis, 
+  CartesianGrid, 
+  ResponsiveContainer,
+  PieChart,
+  Pie,
+  Cell
+} from 'recharts';
+import { 
+  LayoutDashboard, 
+  Package, 
+  ShoppingCart, 
+  Truck, 
+  MessageSquare, 
+  Shield, 
+  TrendingUp, 
+  TrendingDown, 
+  DollarSign, 
+  ShoppingBag, 
+  Users,
+  Users2
+} from 'lucide-react';
+
+
+const salesData = [
+  { name: 'Jan', sales: 4000 },
+  { name: 'Feb', sales: 3000 },
+  { name: 'Mar', sales: 5000 },
+  { name: 'Apr', sales: 4500 },
+  { name: 'May', sales: 6000 },
+  { name: 'Jun', sales: 5500 },
+];
+
+export default function Dashboard({ formData, activeView = 'dashboard', setActiveView }) {
+  const recentOrders = [
+    { id: '#12345', status: 'Delivered', customer: 'ABC Retail Store', amount: '$2,450', date: '2025-10-10' },
+    { id: '#12346', status: 'In Transit', customer: 'XYZ Market', amount: '$1,850', date: '2025-10-09' },
+    { id: '#12347', status: 'Processing', customer: 'Quick Shop', amount: '$3,200', date: '2025-10-09' },
+    { id: '#12348', status: 'Delivered', customer: 'Global Traders', amount: '$4,100', date: '2025-10-08' },
+  ];
+
+  const getStatusBadge = (status) => {
+    switch (status) {
+      case 'Delivered':
+        return 'bg-[#DCFCE7] text-[#15803D]';
+      case 'In Transit':
+        return 'bg-[#DBEAFE] text-[#1D4ED8]';
+      case 'Processing':
+        return 'bg-[#FEF3C7] text-[#B45309]';
+      default:
+        return 'bg-slate-100 text-slate-600';
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-[#F8FAFC] flex font-sans antialiased text-[#0F172A] w-full">
+      
+      
+      <aside className="w-64 bg-white border-r border-slate-200 flex flex-col justify-between shrink-0">
+        <div>
+          
+          <div className="h-16 px-6 flex items-center gap-3 border-b border-slate-100">
+            <div className="w-8 h-8 bg-[#030213] rounded-xl flex items-center justify-center text-white">
+              <Package className="w-4 h-4" />
+            </div>
+            <span className="font-bold text-sm tracking-wide text-[#0F172A]">B2B Platform</span>
+          </div>
+
+        
+          <nav className="p-4 space-y-1 text-xs font-medium">
+            <button
+              type="button"
+              onClick={() => setActiveView && setActiveView('dashboard')}
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${
+                activeView === 'dashboard'
+                  ? 'bg-[#030213] text-white shadow-sm'
+                  : 'text-slate-600 hover:bg-slate-50'
+              }`}
+            >
+              <LayoutDashboard className="w-4 h-4" />
+              <span>Dashboard</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setActiveView && setActiveView('products')}
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${
+                activeView === 'products'
+                  ? 'bg-[#030213] text-white shadow-sm'
+                  : 'text-slate-600 hover:bg-slate-50'
+              }`}
+            >
+              <Package className="w-4 h-4" />
+              <span>Products</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setActiveView && setActiveView('orders')}
+              className={`w-full flex items-center justify-between px-4 py-3 rounded-xl transition-colors ${
+                activeView === 'orders'
+                  ? 'bg-[#030213] text-white shadow-sm'
+                  : 'text-slate-600 hover:bg-slate-50'
+              }`}
+            >
+              <div className="flex items-center gap-3">
+                <ShoppingCart className="w-4 h-4" />
+                <span>Orders</span>
+              </div>
+              <span className="bg-[#D4183D] text-white text-[10px] font-semibold px-2 py-0.5 rounded-full">
+                3
+              </span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setActiveView && setActiveView('shipping')}
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${
+                activeView === 'shipping'
+                  ? 'bg-[#030213] text-white shadow-sm'
+                  : 'text-slate-600 hover:bg-slate-50'
+              }`}
+            >
+              <Truck className="w-4 h-4" />
+              <span>Shipping</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setActiveView && setActiveView('messages')}
+              className={`w-full flex items-center justify-between px-4 py-3 rounded-xl transition-colors ${
+                activeView === 'messages'
+                  ? 'bg-[#030213] text-white shadow-sm'
+                  : 'text-slate-600 hover:bg-slate-50'
+              }`}
+            >
+              <div className="flex items-center gap-3">
+                <MessageSquare className="w-4 h-4" />
+                <span>Messages</span>
+              </div>
+              <span className="bg-[#D4183D] text-white text-[10px] font-semibold px-2 py-0.5 rounded-full">
+                5
+              </span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setActiveView && setActiveView('admin')}
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${
+                activeView === 'admin'
+                  ? 'bg-[#030213] text-white shadow-sm'
+                  : 'text-slate-600 hover:bg-slate-50'
+              }`}
+            >
+              <Shield className="w-4 h-4" />
+              <span>Admin</span>
+            </button>
+          </nav>
+        </div>
+
+        
+        <div className="p-4 border-t border-slate-100 flex items-center gap-3">
+          <div className="w-9 h-9 rounded-full bg-slate-200 flex items-center justify-center font-bold text-xs text-slate-700">
+            {formData?.companyName ? formData.companyName.charAt(0).toUpperCase() : 'A'}
+          </div>
+          <div className="overflow-hidden">
+            <h4 className="text-xs font-semibold text-[#0F172A] truncate">
+              {formData?.companyName || 'Company Name'}
+            </h4>
+            <p className="text-[11px] text-slate-400 truncate">
+              {formData?.companyEmail || 'abc@abc.in'}
+            </p>
+          </div>
+        </div>
+      </aside>
+
+      
+      <main className="flex-1 p-8 overflow-y-auto space-y-6">
+        
+        
+        <div>
+          <h1 className="text-xl font-bold text-[#0F172A]">Dashboard</h1>
+          <p className="text-xs text-slate-400 mt-0.5">Welcome back, here's your business summary</p>
+        </div>
+
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm">
+            <div className="flex justify-between items-center mb-3">
+              <span className="text-xs font-medium text-slate-500">Total Revenue</span>
+              <DollarSign className="w-4 h-4 text-slate-400" />
+            </div>
+            <h3 className="text-xl font-bold text-[#0F172A] mb-1">$28,950</h3>
+            <div className="flex items-center gap-1 text-[11px] text-emerald-600 font-medium">
+              <TrendingUp className="w-3.5 h-3.5" />
+              <span>+12.5% <span className="text-slate-400 font-normal">from last month</span></span>
+            </div>
+          </div>
+
+          <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm">
+            <div className="flex justify-between items-center mb-3">
+              <span className="text-xs font-medium text-slate-500">Total Orders</span>
+              <ShoppingBag className="w-4 h-4 text-slate-400" />
+            </div>
+            <h3 className="text-xl font-bold text-[#0F172A] mb-1">1,745</h3>
+            <div className="flex items-center gap-1 text-[11px] text-emerald-600 font-medium">
+              <TrendingUp className="w-3.5 h-3.5" />
+              <span>+8.2% <span className="text-slate-400 font-normal">from last month</span></span>
+            </div>
+          </div>
+
+          <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm">
+            <div className="flex justify-between items-center mb-3">
+              <span className="text-xs font-medium text-slate-500">Active Products</span>
+              <Package className="w-4 h-4 text-slate-400" />
+            </div>
+            <h3 className="text-xl font-bold text-[#0F172A] mb-1">245</h3>
+            <div className="flex items-center gap-1 text-[11px] text-red-500 font-medium">
+              <TrendingDown className="w-3.5 h-3.5" />
+              <span>-2.1% <span className="text-slate-400 font-normal">from last month</span></span>
+            </div>
+          </div>
+
+          <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm">
+            <div className="flex justify-between items-center mb-3">
+              <span className="text-xs font-medium text-slate-500">Active Retailers</span>
+              <Users className="w-4 h-4 text-slate-400" />
+            </div>
+            <h3 className="text-xl font-bold text-[#0F172A] mb-1">89</h3>
+            <div className="flex items-center gap-1 text-[11px] text-emerald-600 font-medium">
+              <TrendingUp className="w-3.5 h-3.5" />
+              <span>+15.3% <span className="text-slate-400 font-normal">from last month</span></span>
+            </div>
+          </div>
+        </div>
+
+        
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          
+          
+          <div className="lg:col-span-2 bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col justify-between">
+            <div className="mb-4">
+              <h3 className="text-base font-medium text-[#0F172A]">Sales Overview</h3>
+              <p className="text-sm text-slate-500 mt-0.5">Monthly sales and order trends</p>
+            </div>
+
+            <div className="w-full h-[260px]">
+              <ResponsiveContainer width="100%" height="100%">
+                <AreaChart data={salesData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                  <defs>
+                    <linearGradient id="salesGradient" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#030213" stopOpacity={0.3}/>
+                      <stop offset="95%" stopColor="#030213" stopOpacity={0.0}/>
+                    </linearGradient>
+                  </defs>
+
+                  <CartesianGrid strokeDasharray="2 2" vertical={true} stroke="#E2E8F0" />
+                  
+                  <XAxis 
+                    dataKey="name" 
+                    axisLine={{ stroke: '#64748B' }} 
+                    tickLine={{ stroke: '#64748B' }} 
+                    tick={{ fontSize: 11, fill: '#64748B' }} 
+                  />
+                  
+                  <YAxis 
+                    domain={[0, 6000]} 
+                    ticks={[0, 1500, 3000, 4500, 6000]} 
+                    axisLine={{ stroke: '#64748B' }} 
+                    tickLine={{ stroke: '#64748B' }} 
+                    tick={{ fontSize: 11, fill: '#64748B' }} 
+                  />
+
+                  <Area 
+                    id="salesOverviewArea"
+                    type="monotone" 
+                    dataKey="sales" 
+                    stroke="#030213" 
+                    strokeWidth={2.5} 
+                    fillOpacity={1} 
+                    fill="url(#salesGradient)" 
+                  />
+                </AreaChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
+
+          
+          <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between">
+            <div>
+              <h3 className="text-sm font-semibold text-[#0F172A]">Product Categories</h3>
+              <p className="text-xs text-slate-400 mt-0.5">Distribution by category</p>
+            </div>
+
+            <div className="w-full h-[210px] flex items-center justify-center">
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart>
+                  <Pie
+                    data={[
+                      { name: 'Electronics 40%', value: 40, color: '#0066FF' },
+                      { name: 'Clothing 30%', value: 30, color: '#00C853' },
+                      { name: 'Food 20%', value: 20, color: '#FF9800' },
+                      { name: 'Other 10%', value: 10, color: '#FF5722' },
+                    ]}
+                    cx="50%"
+                    cy="50%"
+                    innerRadius={0}
+                    outerRadius={75}
+                    dataKey="value"
+                    startAngle={90}
+                    endAngle={-270}
+                    stroke="#ffffff"
+                    strokeWidth={1.5}
+                    labelLine={false}
+                  >
+                    {[
+                      { name: 'Electronics 40%', value: 40, color: '#0066FF' },
+                      { name: 'Clothing 30%', value: 30, color: '#00C853' },
+                      { name: 'Food 20%', value: 20, color: '#FF9800' },
+                      { name: 'Other 10%', value: 10, color: '#FF5722' },
+                    ].map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={entry.color} />
+                    ))}
+                  </Pie>
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
+
+            
+            <div className="flex flex-col gap-2 text-xs font-[Arial] pt-2 border-t border-slate-100">
+              <div className="flex justify-between items-center">
+                <span className="flex items-center gap-1.5 text-[#0066FF] font-medium">
+                  <span className="w-2 h-2 rounded-full bg-[#0066FF]"></span> Electronics
+                </span>
+                <span className="text-[#0A0A0A] font-bold">40%</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="flex items-center gap-1.5 text-[#00C853] font-medium">
+                  <span className="w-2 h-2 rounded-full bg-[#00C853]"></span> Clothing
+                </span>
+                <span className="text-[#0A0A0A] font-bold">30%</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="flex items-center gap-1.5 text-[#FF9800] font-medium">
+                  <span className="w-2 h-2 rounded-full bg-[#FF9800]"></span> Food
+                </span>
+                <span className="text-[#0A0A0A] font-bold">20%</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="flex items-center gap-1.5 text-[#FF5722] font-medium">
+                  <span className="w-2 h-2 rounded-full bg-[#FF5722]"></span> Other
+                </span>
+                <span className="text-[#0A0A0A] font-bold">10%</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        
+        <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+          <div className="mb-5">
+            <h3 className="text-sm font-semibold text-[#0F172A]">Recent Orders</h3>
+            <p className="text-xs text-slate-400">Your latest transactions and order status</p>
+          </div>
+
+          <div className="space-y-3">
+            {recentOrders.map((order, idx) => (
+              <div 
+                key={idx} 
+                className="flex items-center justify-between p-4 border border-slate-100 rounded-xl hover:shadow-sm transition-shadow bg-white"
+              >
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2.5">
+                    <span className="text-xs font-bold text-[#0F172A]">{order.id}</span>
+                    <span className={`text-[10px] font-medium px-2 py-0.5 rounded-md ${getStatusBadge(order.status)}`}>
+                      {order.status}
+                    </span>
+                  </div>
+                  <p className="text-xs text-slate-400">{order.customer}</p>
+                </div>
+
+                <div className="text-right space-y-1">
+                  <span className="text-xs font-bold text-[#0F172A] block">{order.amount}</span>
+                  <span className="text-[10px] text-slate-400">{order.date}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <button 
+            type="button"
+            onClick={() => setActiveView && setActiveView('products')}
+            className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-left hover:border-slate-300 transition-all cursor-pointer group"
+          >
+            <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center mb-3 text-[#0F172A] group-hover:bg-[#030213] group-hover:text-white transition-colors">
+              <Package className="w-5 h-5" />
+            </div>
+            <h4 className="text-xs font-bold text-[#0F172A] mb-1">Add Product</h4>
+            <p className="text-[11px] text-slate-400 leading-snug">List a new product in your catalog</p>
+          </button>
+
+          <button 
+            type="button"
+            className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-left hover:border-slate-300 transition-all cursor-pointer group"
+          >
+            <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center mb-3 text-[#0F172A] group-hover:bg-[#030213] group-hover:text-white transition-colors">
+              <TrendingUp className="w-5 h-5" />
+            </div>
+            <h4 className="text-xs font-bold text-[#0F172A] mb-1">View Analytics</h4>
+            <p className="text-[11px] text-slate-400 leading-snug">Detailed insights and reports</p>
+          </button>
+
+          <button 
+            type="button"
+            className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-left hover:border-slate-300 transition-all cursor-pointer group"
+          >
+            <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center mb-3 text-[#0F172A] group-hover:bg-[#030213] group-hover:text-white transition-colors">
+              <Users2 className="w-5 h-5" />
+            </div>
+            <h4 className="text-xs font-bold text-[#0F172A] mb-1">Manage Retailers</h4>
+            <p className="text-[11px] text-slate-400 leading-snug">Connect with your partners</p>
+          </button>
+        </div>
+
+      </main>
+    </div>
+  );
+}
