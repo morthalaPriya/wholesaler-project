@@ -2,8 +2,10 @@ import React from 'react';
 import brandIllustration from '../assets/you.png';
 import wholesalerIcon from '../assets/Icon(2).svg';
 import retailerIcon from '../assets/Icon(1).svg';
+import { useNavigate } from "react-router-dom";
 
-export default function SelectType({ onSelectType }) {
+export default function SelectType() {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen w-full flex flex-col md:flex-row bg-[#FAFAFA]">
       <div className="md:w-1/2 w-full h-screen bg-[#F5F6F8]">
@@ -29,7 +31,7 @@ export default function SelectType({ onSelectType }) {
           <div className="grid grid-cols-2 gap-4">
             <button
               type="button"
-              onClick={() => onSelectType('wholesaler')}
+             onClick={() => navigate("/login")}
               className="flex flex-col items-center justify-center p-6 rounded-xl border border-slate-200 hover:border-slate-250 hover:bg-[#ECECF0] text-slate-500/50  transition-all cursor-pointer duration-200"
             >
               <img src={wholesalerIcon} alt="Wholesaler" className="w-6 h-6 mb-2 object-contain" />
@@ -38,7 +40,7 @@ export default function SelectType({ onSelectType }) {
 
             <button
               type="button"
-              onClick={() => onSelectType('retailer')}
+              onClick={() => alert("Retailer login not implemented yet")}
               className="flex flex-col items-center justify-center p-6 rounded-xl border border-slate-200 hover:border-slate-250 hover:bg-[#ECECF0] text-slate-500/50  transition-all cursor-pointer duration-200"
             >
               <img src={retailerIcon} alt="Retailer" className="w-6 h-6 mb-2 object-contain" />

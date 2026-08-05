@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import React, { useState } from 'react';
 import retailerIcon from '../assets/Icon(1).svg';
 import wholesalerIcon from '../assets/Icon(2).svg';
@@ -7,7 +8,8 @@ import emailIcon from '../assets/Icon(6).svg';
 import lockIcon from '../assets/Icon(5).svg';
 import logoIcon from '../assets/Icon(7).svg';
 
-export default function WholesalerLogin({ onSelectType, onForgotPassword }) {
+export default function WholesalerLogin({ onLogin }) {
+  const navigate = useNavigate();
   const [loginMethod, setLoginMethod] = useState('password');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -19,19 +21,21 @@ export default function WholesalerLogin({ onSelectType, onForgotPassword }) {
     }
 
     setLoginMethod('password');
-    if (onSelectType) {
-      onSelectType(accountType);
-    }
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    if (loginMethod === 'otp') {
-      alert(`Sending OTP code to: ${email}`);
-    } else {
-      alert(`Logging in with email: ${email}`);
+ function handleSubmit(event) {
+  event.preventDefault();
+
+  if (loginMethod === 'otp') {
+    alert(`Sending OTP code to: ${email}`);
+  } else {
+    alert(`Logging in with email: ${email}`);
+
+    if (onLogin) {
+      onLogin();
     }
   }
+}
 
   const isOtpSelected = loginMethod === 'otp';
   const isPasswordSelected = loginMethod === 'password';
@@ -187,7 +191,7 @@ export default function WholesalerLogin({ onSelectType, onForgotPassword }) {
                 <div className="text-right">
                   <button
                     type="button"
-                    onClick={onForgotPassword}
+                    onClick={() => navigate("/reset-password")}
                     className="text-xs font-medium text-slate-900 hover:underline cursor-pointer"
                   >
                     Forgot Password?
