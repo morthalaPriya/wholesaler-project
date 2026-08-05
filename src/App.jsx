@@ -1,82 +1,54 @@
-import React, { useState } from 'react';
-import SelectType from './components/LoginPage';
-import WholesalerLogin from './components/WholesalerLogin';
-import ResetPassword from './components/ResetPassword';
-import VerifyIdentity from './components/Verify';
-import EnterOtp from './components/EnterOtp';
-import CreateNewPassword from './components/NewPassword';
-import PasswordSuccess from './components/PasswordSuccess';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Sidebar from "./components/Sidebar";
+import ShippingLogistics from "./components/ShippingLogistics";
+import ShippingProviders from "./Components/ShippingProviders";
+import Messages from "./Components-1/Messages";
+import MessagesTemplates from "./Components-1/MessagesTemplates";
+import MessagesNotifications from "./Components-1/MessagesNotifications";
+import AdminApprovals from "./Components-2/AdminApprovals";
+import AdminAnalytics from "./Components-2/AdminAnalytics";
+import AdminAuditLogs from "./Components-2/AdminAuditLogs";
+
+function Dashboard() {
+  return <h1>Dashboard</h1>;
+}
+
+function Orders() {
+  return <h1>Orders</h1>;
+}
+function Products(){
+  return <h1>Products</h1>
+}
 
 function App() {
-  const [selectedType, setSelectedType] = useState(null);
-  const [currentScreen, setCurrentScreen] = useState('selectType');
-  const [selectedMethod, setSelectedMethod] = useState('email');
-  const [targetDestination, setTargetDestination] = useState('');
-
-  function handleSelectMethod(method) {
-    setSelectedMethod(method);
-    setCurrentScreen('verifyIdentity');
-  }
-
-  function handleSendOtp(data) {
-    setTargetDestination(data.value || 'your registered contact');
-    setCurrentScreen('enterOtp');
-  }
-
-  function handleVerifyOtp(otp) {
-    console.log('OTP Verified:', otp);
-    setCurrentScreen('createNewPassword');
-  }
-
-  function handleResetSuccess(newPassword) {
-    setCurrentScreen('passwordSuccess');
-  }
-
   return (
-    <div>
-      {currentScreen === 'passwordSuccess' ? (
-        <PasswordSuccess
-          onBackToLogin={() => setCurrentScreen('login')}
-        />
-      ) : currentScreen === 'createNewPassword' ? (
-        <CreateNewPassword
-          onResetSuccess={handleResetSuccess}
-          onBackToLogin={() => setCurrentScreen('login')}
-          onBackToMethod={() => setCurrentScreen('enterOtp')}
-        />
-      ) : currentScreen === 'enterOtp' ? (
-        <EnterOtp
-          targetDestination={targetDestination}
-          onVerifyOtp={handleVerifyOtp}
-          onBackToLogin={() => setCurrentScreen('login')}
-          onBackToMethod={() => setCurrentScreen('verifyIdentity')}
-        />
-      ) : currentScreen === 'verifyIdentity' ? (
-        <VerifyIdentity 
-          selectedMethod={selectedMethod}
-          onSendOtp={handleSendOtp}
-          onBackToLogin={() => setCurrentScreen('login')}
-          onBackToMethod={() => setCurrentScreen('resetPassword')}
-        />
-      ) : currentScreen === 'resetPassword' ? (
-        <ResetPassword 
-          onSelectMethod={handleSelectMethod} 
-          onBackToLogin={() => setCurrentScreen('login')}
-        />
-      ) : currentScreen === 'login' && selectedType === 'wholesaler' ? (
-        <WholesalerLogin 
-          onSelectType={(type) => setSelectedType(type)} 
-          onForgotPassword={() => setCurrentScreen('resetPassword')}
-        />
-      ) : (
-        <SelectType 
-          onSelectType={(type) => {
-            setSelectedType(type);
-            if (type === 'wholesaler') setCurrentScreen('login');
-          }} 
-        />
-      )}
-    </div>
+    <BrowserRouter>
+      <div className="flex">
+        <Sidebar/>
+
+        <div className="flex-1">
+          <Routes>
+            <Route path="/" element={<Dashboard/>}/>
+            <Route path="/products" element={<Products/>} />
+            <Route path="/orders" element={<Orders/>} />
+
+
+            <Route path="/shipping" element={<ShippingLogistics/>} />
+            <Route path="/shipping/providers" element={<ShippingProviders/>} />
+
+
+            <Route path="/messages" element={<Messages/>}/>
+            <Route path="messages/templates" element={<MessagesTemplates/>}/>
+            <Route path="/messages/notifications" element={<MessagesNotifications/>}/>
+
+
+            <Route path="/admin" element={<AdminApprovals/>}/>
+            <Route path="/admin/analytics" element={<AdminAnalytics/>}/>
+            <Route path="/admin/audit-logs" element={<AdminAuditLogs/>}/>
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
