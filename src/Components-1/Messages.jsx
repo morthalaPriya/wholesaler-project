@@ -1,7 +1,7 @@
 import DotIcon from "../assets/Dot-Icon.png";
 import ButtonIcon from "../assets/Button.png";
 import Button2 from "../assets/Button-2.png";
-import SearchIcon from "../assets/SearchIcon.png";
+import SearchIcon from "../assets/Searchicon.png";
 import { NavLink } from "react-router-dom";
 function Messages() {
     return (
