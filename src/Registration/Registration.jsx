@@ -2,12 +2,12 @@ import React, { useState } from "react";
 
 import RegistrationLayout from "../layouts/RegistrationLayout";
 
-import Step1CompanyDetails from "../components/Step1CompanyDetails";
-import Step2ContactPerson from "../components/Step2ContactPerson";
-import Step3BusinessLicense from "../components/Step3BusinessLicense";
-import Step4AddressWarehouse from "../components/Step4AddressWarehouse";
-import Step5Verification from "../components/Step5Verification";
-import Step6Review from "../components/Step6Review";
+import Step1CompanyDetails from "../Components/Step1CompanyDetails";
+import Step2ContactPerson from "../Components/Step2ContactPerson";
+import Step3BusinessLicense from "../Components/Step3BusinessLicense";
+import Step4AddressWarehouse from "../Components/Step4AddressWarehouse";
+import Step5Verification from "../Components/Step5Verification";
+import Step6Review from "../Components/Step6Review";
 
 
 function Registration() {
