@@ -16,9 +16,10 @@ import AdminAnalytics from "./Components-2/AdminAnalytics";
 import AdminAuditLogs from "./Components-2/AdminAuditLogs";
 import ProfileManagement from "./Components-3/ProfileManagement";
 
-
 function App() {
-    const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("isLoggedIn") === "true");
+    const [isLoggedIn, setIsLoggedIn] = useState(
+        sessionStorage.getItem("isLoggedIn") === "true"
+    );
     const [showRegistration, setShowRegistration] = useState(false);
     return (
         <BrowserRouter>
@@ -27,26 +28,27 @@ function App() {
                     onComplete={() => {
                         setShowRegistration(false);
                         setIsLoggedIn(true);
-                        localStorage.setItem("isLoggedIn", "true");
+                        sessionStorage.setItem("isLoggedIn", "true");
                     }}
                 />
-
             ) : !isLoggedIn ? (
                 <LoginFlow
                     onLogin={() => {
                         setIsLoggedIn(true);
-                        localStorage.setItem("isLoggedIn", "true");
+                        sessionStorage.setItem("isLoggedIn", "true");
                     }}
-                    onRegister={() => setShowRegistration(true)}
+                    onRegister={() => {
+                        setShowRegistration(true);
+                    }}
                 />
             ) : (
                 <Routes>
-                    <Route path="/profile" element={<ProfileManagement/>}/>
+                    <Route path="/profile" element={<ProfileManagement />} />
                     <Route
                         path="*"
                         element={
                             <div className="flex">
-                                <SidebarThird/>
+                                <SidebarThird />
                                 <div className="flex-1">
                                     <Routes>
                                         <Route path="/" element={<Dashboard />} />
@@ -70,5 +72,6 @@ function App() {
         </BrowserRouter>
     );
 }
+
 
 export default App;
