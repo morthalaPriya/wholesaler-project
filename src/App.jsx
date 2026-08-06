@@ -6,7 +6,7 @@ import SidebarThird from "./Components/SidebarThird";
 import Dashboard from "./Components/Dashboard";
 import ProductCatalog from "./Components/ProductCatalog";
 import Orders from "./Components/Orders";
-import ShippingLogistics from "./components/ShippingLogistics";
+import ShippingLogistics from "./Components/ShippingLogistics";
 import ShippingProviders from "./Components/ShippingProviders";
 import Messages from "./Components-1/Messages";
 import MessagesTemplates from "./Components-1/MessagesTemplates";
